@@ -296,6 +296,7 @@ C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\P
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
@@ -323,7 +324,11 @@ C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\P
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.csprojAssemblyReference.cache
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.AssemblyInfoInputs.cache
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.AssemblyInfo.cs
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.csproj.CoreCompileInputs.cache
@@ -351,3 +356,4 @@ C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\P
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.pdb
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.genruntimeconfig.cache
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.csprojAssemblyReference.cache

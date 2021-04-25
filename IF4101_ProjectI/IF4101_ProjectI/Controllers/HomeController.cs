@@ -8,6 +8,7 @@ using LabMVC_15042021.Models;
 using LabMVC_15042021.Models.Data;
 using LabMVC_15042021.Models.Domain;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace LabMVC_15042021.Controllers
@@ -15,11 +16,14 @@ namespace LabMVC_15042021.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+		private readonly IConfiguration _configuration;
 
-		public HomeController(ILogger<HomeController> logger)
-		{
-			_logger = logger;
-		}
+		StudentDAO studentDAO;
+		
+		public HomeController(ILogger<HomeController> logger, IConfiguration configuration) { 
+			_logger = logger; 
+			_configuration = configuration; 
+		}		
 
 		public IActionResult Index()
 		{
@@ -37,17 +41,16 @@ namespace LabMVC_15042021.Controllers
 			//este método es el que llama al modelo (BD)
 
 			//regla de negocio, simulando que existe e@e.com
-			if (student.Email == ""|| student.Name == "" || student.Password == "" || !(student.Email.Contains("@")))
+			if (student.Email == "" || student.Name == "" || student.Password == "" || student.User == "" || !(student.Email.Contains("@")))
 			{
 				return Error();
 			}
 			else
 			{
+				studentDAO = new StudentDAO(_configuration);
+				int resultToReturn = studentDAO.Insert(student);
 
-				StudentDAO studentDAO = new StudentDAO();
-				studentDAO.Insert(student);
-
-				return Ok();
+				return Ok(resultToReturn); //retornamos el 1 o el 0 ala vista
 			}
 		}
 

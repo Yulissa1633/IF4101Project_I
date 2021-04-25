@@ -11,10 +11,11 @@ $(document).ready(function () {
 function Add() {
 
     var student = {
-
+        user: $('#user').val(),
         name: $('#name').val(),
         email: $('#email').val(),
         password: $('#password').val()
+        
 
     };
 
