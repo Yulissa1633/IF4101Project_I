@@ -256,9 +256,9 @@ https://templatemo.com/tm-516-known
       MENU              
   -----------------------------------------*/
 
-  .custom-navbar {
+.custom-navbar {
     background: #ffffff;
-    border-top: 5px solid #29ca8e;
+    border-top: 5px solid #41ade7;
     border-bottom: 0;
     -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
@@ -266,7 +266,7 @@ https://templatemo.com/tm-516-known
     padding: 12px 0;
     margin-bottom: 0;
     padding: 0;
-  }
+}
 
   .custom-navbar .navbar-brand {
     color: #454545;
@@ -308,15 +308,15 @@ https://templatemo.com/tm-516-known
     background-color: transparent;
   }
 
-  .custom-navbar .nav li a:hover {
-    background-color: #29ca8e;
-    color: #ffffff;
-  }
+    .custom-navbar .nav li a:hover {
+        background-color: #41ade7;
+        color: #ffffff;
+    }
 
-  .custom-navbar .nav li.active > a {
-    background-color: #29ca8e;
-    color: #ffffff;
-  }
+    .custom-navbar .nav li.active > a {
+        background-color: #41ade7;
+        color: #ffffff;
+    }
 
   .custom-navbar .navbar-toggle {
     border: none;
@@ -332,22 +332,67 @@ https://templatemo.com/tm-516-known
     border-color: transparent;
   }
 
+#ucrlog {
+    padding-top: 4px;
+    width: 160px;
+    height: 60px;
+}
 
 
   /*---------------------------------------
       HOME  & SLIDER            
   -----------------------------------------*/
 
-  #home {
+#home {
     padding: 10px;
     padding-left: 250px;
-  }
+    background-color: white;
+}
 
     #tableTwo {
         padding: 100px;
         border-spacing: 15px;
         padding-left: 250px;
     }
+
+#tableCong {
+    padding: 10px;
+}
+
+#name, #password, #user, #email, #full name {
+    font-size: 15px;
+    font-family: Nunito, sans-serif;
+    outline: none;
+    color: black;
+    height: 50px;
+    width: 200px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #808b96;
+}
+
+#buttonLog {
+    text-decoration: none;
+    background: #41ade7;
+    border: 0px;
+    height: 50px;
+    width: 200px;
+    font-size: 15px;
+    font-family: Nunito, sans-serif;
+    color: white;
+    outline: none;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+}
+
+h2 {
+    color: #808b96;
+    font-size: 30px;
+    font-family: helvetica;
+    font-weight: bold;
+    line-height: inherit;
+    padding-left: 9px;
+}
 
 /*---------------------------------------
       FEATURE              
@@ -852,6 +897,8 @@ https://templatemo.com/tm-516-known
       padding-left: 10px;
     }
   }
+
+
 
   @media only screen and (max-width: 767px) {
     h1 {
