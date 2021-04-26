@@ -2,28 +2,30 @@
 <html lang="en">
 <head>
 
-	<title>Informática Empresarial - UCR</title>
-	<!--
+    <title>Informática Empresarial - UCR</title>
+    <!--
 
-	Known Template
+    Known Template
 
-	https://templatemo.com/tm-516-known
+    https://templatemo.com/tm-516-known
 
-	-->
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="icon" type="image/jpg" href="images/favicon.JPG" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/mySlides.css">
 
-	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="css/templatemo-style.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/templatemo-style.css">
 
 </head>
 
@@ -83,14 +85,13 @@
     <!-- HOME -->
     <section id="home">
         <div class="row">
-
-            <div>
-                <table id="tableTwo">
+            <div id="loginSection">
+                <table>
                     <tr>
-                        <td id="tableTwo">
+                        <td id="tableOne">
                             <!--<form>-->
                             <h2>Ingresar</h2>
-                            <table id="tableTwo">
+                            <table id="tableOne">
                                 <tr>
                                     <td id="tableCong">
                                         <input type="text" name="full name" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
@@ -117,6 +118,24 @@
                             <!--</form>-->
                         </td>
                         <td>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <img src="images/recinto2.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="images/recinto1.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="images/recinto3.jpg" style="width:100%">
+                                </div>
+                            </div>
+                        </td>
+                        <td id="tableTwo">
                             <!--<form>-->
                             <h2>Registrarse </h2>
                             <table id="tableTwo">
@@ -153,7 +172,7 @@
 
                                 <tr>
 
-                                    <td tableCong>
+                                    <td id="tableCong">
                                         <button class="submit-btn form-control" onclick="return Add()" id="buttonLog">Ingresar</button>
                                     </td>
 

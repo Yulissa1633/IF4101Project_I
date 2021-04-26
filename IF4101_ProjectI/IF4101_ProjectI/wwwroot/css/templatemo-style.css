@@ -345,26 +345,33 @@ https://templatemo.com/tm-516-known
 
 #home {
     padding: 10px;
-    padding-left: 250px;
+    padding-left: 70px;
     background-color: white;
 }
 
-    #tableTwo {
-        padding: 100px;
-        border-spacing: 15px;
-        padding-left: 250px;
-    }
+#tableOne {
+    padding: 100px;
+    border-spacing: 15px;
+    padding-left: 10px;
+}
+
+#tableTwo {
+    padding: 100px;
+    border-spacing: 15px;
+    padding-right: 100px;
+}
 
 #tableCong {
     padding: 10px;
 }
 
-#name, #password, #user, #email, #full name {
+
+#name, #password, #user, #email, #full name, #name2, #password2 {
     font-size: 15px;
     font-family: Nunito, sans-serif;
     outline: none;
     color: black;
-    height: 50px;
+    height: 40px;
     width: 200px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -387,7 +394,7 @@ https://templatemo.com/tm-516-known
 
 h2 {
     color: #808b96;
-    font-size: 30px;
+    font-size: 25px;
     font-family: helvetica;
     font-weight: bold;
     line-height: inherit;
