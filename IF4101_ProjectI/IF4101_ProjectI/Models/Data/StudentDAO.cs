@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using IF4101_ProjectI.Models.Data;
 using LabMVC_15042021.Models.Domain;
 using Microsoft.Extensions.Configuration;
+using Microsoft.JSInterop;
 
 namespace LabMVC_15042021.Models.Data
 {
@@ -19,7 +22,8 @@ namespace LabMVC_15042021.Models.Data
 			connectionString = _configuration.GetConnectionString("DefaultConnection");
 
 		}
-		public StudentDAO() {
+		public StudentDAO()
+		{
 
 		}
 
@@ -43,5 +47,38 @@ namespace LabMVC_15042021.Models.Data
 			}
 			return resultToReturn;
 		}
+
+		[JSInvokable]
+		public bool Login(Param param)
+		{
+			Student s = new Student();
+			using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+				connection.Open(); //abrimos conexión
+				SqlCommand command = new SqlCommand("GetStudent", connection);
+
+				command.CommandType = System.Data.CommandType.StoredProcedure;
+				command.Parameters.AddWithValue("@User", param.User);
+				command.Parameters.AddWithValue("@Password", param.Password);
+
+				SqlDataReader reader = command.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())//Obtenemos los datos de la columna y asignamos a los campos de la Cache de Usuario
+					{
+						s.Id = reader.GetInt32(0);
+						s.User = reader.GetString(2);
+						s.Name = reader.GetString(1);
+						s.Password = reader.GetString(3);
+						s.Email = reader.GetString(4);
+					}
+					return true;
+				}
+				else
+					return false;
+			}
+
+		}
+
 	}
 }

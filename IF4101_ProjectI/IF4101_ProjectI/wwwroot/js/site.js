@@ -7,6 +7,43 @@ $(document).ready(function () {
 
 });
 
+$.each($('a.disabled'), function (index, value) {
+    $(this).css('pointer-events', 'none');
+    $(this).css('cursor', 'not-allowed');
+});
+
+function Log() {
+
+    var param = {
+        user: $('#name2').val(),
+        password: $('#password2').val()
+    };
+
+    $.ajax({
+        url: "/Home/Get",
+        data: JSON.stringify(param),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            if (result == true) {
+                alert("Ingresa");
+                $.each($('a.disabled'), function (index, value) {
+                    $(this).css('pointer-events', 'auto');
+                    $(this).css('cursor', 'auto');
+                });
+            }
+            else {
+                alert("No ingresa");
+            }
+        },
+        error: function (errorMessage) {
+            alert("Error");
+            alert(errorMessage.responseText);
+        }
+    });
+   
+}
 
 function Add() {
 

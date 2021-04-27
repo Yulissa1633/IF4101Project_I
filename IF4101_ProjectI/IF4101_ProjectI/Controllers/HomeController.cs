@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using IF4101_ProjectI.Models;
+using IF4101_ProjectI.Models.Data;
 using LabMVC_15042021.Models;
 using LabMVC_15042021.Models.Data;
 using LabMVC_15042021.Models.Domain;
@@ -52,6 +53,15 @@ namespace LabMVC_15042021.Controllers
 
 				return Ok(resultToReturn); //retornamos el 1 o el 0 ala vista
 			}
+		}
+
+		public IActionResult Get([FromBody] Param param)
+		{
+				
+				studentDAO = new StudentDAO(_configuration);
+				bool resultToReturn = studentDAO.Login(param);
+				return Ok(resultToReturn);
+			
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
