@@ -8,19 +8,20 @@ https://templatemo.com/tm-516-known
 
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700|Nunito');
 
-  body {
+body {
     background: #ffffff;
     font-family: 'Nunito', sans-serif;
-    overflow-x: hidden;
+    /*---overflow-x: hidden;---*/
     padding-top: 70px;
-  }
+    /*---overflow: hidden;---*/
+}
 
 
   /*---------------------------------------
      TYPOGRAPHY              
   -----------------------------------------*/
 
-  h1,h2,h3,h4,h5,h6 {
+    h1,h2,h3,h4,h5,h6 {
     font-family: 'Muli', sans-serif;
     font-weight: bold;
     line-height: inherit;
@@ -464,43 +465,20 @@ h2 {
       TEAM              
   -----------------------------------------*/
 
-  .team-thumb {
-    background: #ffffff;
-    position: relative;
-    overflow: hidden;
-    text-align: left;
-  }
-
-  .team-info {
-    padding: 20px 30px;
-  }
-
-  .team-image img {
-    width: 100%;
-  }
-
-  .team-thumb .social-icon {
-    border-top: 1px solid #f0f0f0;
-    padding: 4px 20px 0 20px;
-  }
-
-  .team-thumb .social-icon li a {
-    background: #ffffff;
-    color: #252020;
-  }
-
-  .team-info h3 {
-    margin: 0;
-  }
+#tablecontainer {
+    padding: 10px;
+    background-color: white;
+}
 
 
-  /*---------------------------------------
+
+
+/*---------------------------------------
       COURSES             
   -----------------------------------------*/
-
-  #courses .section-title {
+#courses .section-title {
     text-align: center;
-  }
+}
 
   #courses .owl-theme .owl-nav {
     margin-top: 30px;

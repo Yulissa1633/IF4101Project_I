@@ -356,4 +356,5 @@ C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\P
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.pdb
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.genruntimeconfig.cache
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\DataTables.AspNet.Core.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\IF4101_ProjectI.csprojAssemblyReference.cache

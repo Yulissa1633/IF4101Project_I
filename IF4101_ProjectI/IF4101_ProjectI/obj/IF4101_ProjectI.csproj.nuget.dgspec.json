@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "DataTables.AspNet.Core": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.12, )"
@@ -47,6 +51,14 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.2, )"
+            },
+            "datatables.net-dt": {
+              "target": "Package",
+              "version": "[1.10.24, )"
+            },
+            "jquery.dataTables.TypeScript.DefinitelyTyped": {
+              "target": "Package",
+              "version": "[0.6.7, )"
             }
           },
           "imports": [

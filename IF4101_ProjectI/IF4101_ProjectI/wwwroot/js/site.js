@@ -3,8 +3,10 @@
 
 // Write your JavaScript code.
 $(document).ready(function () {
-
-
+        $('#escalation').DataTable({
+            "scrollY": "25vh",
+            "scrollCollapse": true,
+        });
 });
 
 $.each($('a.disabled'), function (index, value) {
