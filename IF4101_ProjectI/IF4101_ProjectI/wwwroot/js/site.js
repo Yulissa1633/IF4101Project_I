@@ -15,7 +15,16 @@ $.each($('a.disabled'), function (index, value) {
     $(this).css('cursor', 'not-allowed');
 });
 
+$('#buttonRegister').click(function () {
+    $('input[type="text"]').val('');
+    $('input[type="password"]').val('');
+    $('input[type="email"]').val('');
+});
 
+$('#buttonLog').click(function () {
+    $('input[type="text"]').val('');
+    $('input[type="password"]').val('');
+});
 
 function togglePopup() {
     document.getElementById("RegisterSection").classList.toggle("active");
@@ -98,7 +107,13 @@ function Add() {
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         success: function (result) {
+            if (result == true) {
+                alert("Ingresa");
             //aca recibo el resultafo del backend (datos,objetos,mensajes)
+            }
+            else {
+                alert("No ingresa");
+            }
         },
         error: function (errorMessage) {
             alert("Error");

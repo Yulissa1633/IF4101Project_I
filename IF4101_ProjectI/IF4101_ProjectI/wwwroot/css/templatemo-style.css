@@ -387,7 +387,7 @@ body {
     border: 1px solid #808b96;
 }
 
-#buttonLog {
+#buttonLog, #buttonRegister {
     text-decoration: none;
     background: #41ade7;
     border: 0px;
