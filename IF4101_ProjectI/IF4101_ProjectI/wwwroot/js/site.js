@@ -7,6 +7,7 @@ $(document).ready(function () {
             "scrollY": "25vh",
             "scrollCollapse": true,
         });
+    LoadDataEF();
 });
 
 $.each($('a.disabled'), function (index, value) {
@@ -18,6 +19,32 @@ $.each($('a.disabled'), function (index, value) {
 
 function togglePopup() {
     document.getElementById("RegisterSection").classList.toggle("active");
+}
+
+function LoadDataEF() {
+    $.ajax({
+        url: "/Student/GetEF", //MVC NORMAL
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            var html = '';
+            $.each(result, function (key, item) {
+                html += '<tr>';
+                html += '<td>' + item.id + '</td>';
+                html += '<td>' + item.user + '</td>';
+                html += '<td>' + item.name + '</td>';
+                html += '<td>' + item.email + '</td>';
+                html += '<td><a href="#" onclick="return Get(' + item.id + ')">Edit</a> | <a href="#" onclick="Delete(' + item.id + ')">Delete</a></td>';
+            });
+            $('.tbody').html(html);
+
+        },
+        error: function (errorMessage) {
+            alert(errorMessage.responseText);
+        }
+    });
+
 }
 
 function Log() {

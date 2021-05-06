@@ -5,14 +5,18 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using IF4101_ProjectI.Models.Data;
+using IF4101_ProjectI.Models.Entities;
 using LabMVC_15042021.Models.Domain;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.JSInterop;
+using Student = IF4101_ProjectI.Models.Entities.Student;
 
 namespace LabMVC_15042021.Models.Data
 {
 	public class StudentDAO
 	{
+		private readonly IF4101_B91472_B92299Context _context;
 		private readonly IConfiguration _configuration;
 		string connectionString;
 
@@ -22,13 +26,18 @@ namespace LabMVC_15042021.Models.Data
 			connectionString = _configuration.GetConnectionString("DefaultConnection");
 
 		}
+
+		public StudentDAO(IF4101_B91472_B92299Context context) //cambien el mio
+		{
+			_context = context;
+		}
 		public StudentDAO()
 		{
 
 		}
 
 		//método que simula la inserción de estudiante em BD
-		public int Insert(Student student)
+		public int Insert(Domain.Student student)
 		{
 			int resultToReturn;
 			using (SqlConnection connection = new SqlConnection(connectionString))
@@ -51,7 +60,7 @@ namespace LabMVC_15042021.Models.Data
 		[JSInvokable]
 		public bool Login(Param param)
 		{
-			Student s = new Student();
+            Domain.Student s = new Domain.Student();
 			using (SqlConnection connection = new SqlConnection(connectionString))
             {
 				connection.Open(); //abrimos conexión
@@ -78,6 +87,13 @@ namespace LabMVC_15042021.Models.Data
 					return false;
 			}
 
+		}
+
+		public IEnumerable<Student> GetStudentsEF()
+		{
+			var students = _context.Students;
+
+			return students.ToList();
 		}
 
 	}

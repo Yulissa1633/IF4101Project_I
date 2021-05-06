@@ -11,9 +11,9 @@ https://templatemo.com/tm-516-known
 body {
     background: #ffffff;
     font-family: 'Nunito', sans-serif;
-    /*---overflow-x: hidden;---*/
+    overflow-x: hidden;
     padding-top: 70px;
-    /*---overflow: hidden;---*/
+    overflow: hidden;
 }
 
 
