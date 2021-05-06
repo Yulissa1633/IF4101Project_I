@@ -14,6 +14,12 @@ $.each($('a.disabled'), function (index, value) {
     $(this).css('cursor', 'not-allowed');
 });
 
+
+
+function togglePopup() {
+    document.getElementById("RegisterSection").classList.toggle("active");
+}
+
 function Log() {
 
     var param = {

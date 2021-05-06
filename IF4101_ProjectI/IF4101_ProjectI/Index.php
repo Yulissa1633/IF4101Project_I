@@ -1,1 +1,0 @@
-﻿<?php require_once("Index.cshtml") ?>
