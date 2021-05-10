@@ -401,6 +401,12 @@ body {
     -webkit-border-radius: 30px;
 }
 
+#incorrect, #incorrect2, #incorrect3, #incorrect4, #incorrect5, #incorrect6 {
+    font-size: 15px;
+    font-family: Nunito, sans-serif;
+    color: red;
+}
+
 h2 {
     color: #808b96;
     font-size: 25px;

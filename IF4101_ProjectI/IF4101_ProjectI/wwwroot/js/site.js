@@ -8,6 +8,12 @@ $(document).ready(function () {
             "scrollCollapse": true,
         });
     LoadDataEF();
+    document.getElementById('incorrect').style.display = 'none';
+    document.getElementById('incorrect2').style.display = 'none';
+    document.getElementById('incorrect3').style.display = 'none';
+    document.getElementById('incorrect4').style.display = 'none';
+    document.getElementById('incorrect5').style.display = 'none';
+    document.getElementById('incorrect6').style.display = 'none';
 });
 
 $.each($('a.disabled'), function (index, value) {
@@ -71,19 +77,21 @@ function Log() {
         dataType: "json",
         success: function (result) {
             if (result == true) {
-                alert("Ingresa");
                 $.each($('a.disabled'), function (index, value) {
                     $(this).css('pointer-events', 'auto');
                     $(this).css('cursor', 'auto');
                 });
+                document.getElementById('incorrect5').style.display = 'none';
+                document.getElementById('incorrect6').style.display = 'none';
             }
             else {
-                alert("No ingresa");
+                document.getElementById('incorrect5').style.display = 'block';
+                document.getElementById('incorrect6').style.display = 'block';
             }
         },
         error: function (errorMessage) {
-            alert("Error");
-            alert(errorMessage.responseText);
+            document.getElementById('incorrect5').style.display = 'block';
+            document.getElementById('incorrect6').style.display = 'block';
         }
     });
    
@@ -109,15 +117,23 @@ function Add() {
         success: function (result) {
             if (result == true) {
                 alert("Ingresa");
-            //aca recibo el resultafo del backend (datos,objetos,mensajes)
+                document.getElementById('incorrect').style.display = 'none';
+                document.getElementById('incorrect2').style.display = 'none';
+                document.getElementById('incorrect3').style.display = 'none';
+                document.getElementById('incorrect4').style.display = 'none';
             }
             else {
-                alert("No ingresa");
+                document.getElementById('incorrect').style.display = 'block';
+                document.getElementById('incorrect2').style.display = 'block';
+                document.getElementById('incorrect3').style.display = 'block';
+                document.getElementById('incorrect4').style.display = 'block';
             }
         },
         error: function (errorMessage) {
-            alert("Error");
-            alert(errorMessage.responseText);
+            document.getElementById('incorrect').style.display = 'block';
+            document.getElementById('incorrect2').style.display = 'block';
+            document.getElementById('incorrect3').style.display = 'block';
+            document.getElementById('incorrect4').style.display = 'block';
         }
     });
 }
