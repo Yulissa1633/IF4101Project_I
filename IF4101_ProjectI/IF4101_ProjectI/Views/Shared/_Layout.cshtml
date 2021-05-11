@@ -221,55 +221,88 @@
 
     <!-- ABOUT -->
     <section id="about">
+        <a onclick="togglePopupEditProfile()">Editar perfil</a>
 
-        <h3 class="box-title">Editar mi perfíl</h3>     
         <!-- form start -->
-        <form role="form" method="post" action="" enctype="multipart/form-data">
-            <div class="box-body">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nombre completo</label>
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre completo" value="<?php echo $use['nombre'];?>">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Usuario</label>
-                    <input type="text" name="usuario" class="form-control" placeholder="Usuario" value="<?php echo $use['usuario'];?>">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="text" name="email" class="form-control" placeholder="Email" value="<?php echo $use['email'];?>">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">Cambiar mi avatar</label>
-                    <input type="file" name="avatar">
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="radio" value="H" name="sexo" <?php if($use['sexo'] == 'H') { echo 'checked'; } ?>> Hombre <br>
-                        <input type="radio" value="M" name="sexo" <?php if($use['sexo'] == 'M') { echo 'checked'; } ?>> Mujer
-                    </label>
-                </div>
+        <div class="popup" id="EditProfileSection">
+            <div class="overlay"></div>
+            <div class="content2">
+                <div class="close-btn" onclick="togglePopupEditProfile()">×</div>
+                <table>
+                    <h2>Editar perfil</h2>
+                    <tr>
 
-                <!-- Date dd/mm/yyyy -->
-                <div class="form-group">
-                    <label>Fecha de nacimiento</label>
+                        <td id="tableCong3">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required="" autocomplete="off">
+                        </td>
 
-                    <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type="text" name="nacimiento" placeholder="<?php echo $use['nacimiento'];?>" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                    </div>
-                    <!-- /.input group -->
-                </div>
-                <!-- /.form group -->
-            </div>
-            <!-- /.box-body -->
+                    </tr>
+                    <tr>
 
-            <div class="box-footer">
-                <button type="submit" name="actualizar" class="btn btn-primary">Actualizar datos</button>
-            </div>
-        </form>
-    </section>
+                        <td id="tableCong3">
+                            <input type="text" name="usuario" class="form-control" placeholder="Usuario" required="" autocomplete="off">
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong3">
+                            <input type="text" name="email" class="form-control" placeholder="Email" required="" autocomplete="off">
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong3">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="nacimiento" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong4">
+                            <p>Cambiar avatar</p>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong3">
+                            <input type="file" name="avatar">
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong4">
+                            <input id="gender" type="radio" value="H" name="sexo">  Hombre
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong4">
+                            <input id="gender" type="radio" value="M" name="sexo"> Mujer
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong">
+                            <button id="buttonUpdateProfile" type="submit" name="update" class="submit-btn form-control">Actualizar datos</button>
+                        </td>
+
+                    </tr>
+                </table>
+                </div>         
+        </div>           
+</section>
 
 
             <!-- Courses -->

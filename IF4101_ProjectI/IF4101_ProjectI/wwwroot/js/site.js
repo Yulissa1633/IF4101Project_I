@@ -36,6 +36,10 @@ function togglePopup() {
     document.getElementById("RegisterSection").classList.toggle("active");
 }
 
+function togglePopupEditProfile() {
+    document.getElementById("EditProfileSection").classList.toggle("active");
+}
+
 function LoadDataEF() {
     $.ajax({
         url: "/Student/GetEF", //MVC NORMAL
