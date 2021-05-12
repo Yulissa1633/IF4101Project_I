@@ -18,6 +18,7 @@ namespace IF4101_ProjectI.Models.Entities
         }
 
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<UserProfile> UserProfiles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -47,6 +48,35 @@ namespace IF4101_ProjectI.Models.Entities
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasMaxLength(20);
+
+                entity.Property(e => e.User)
+                    .IsRequired()
+                    .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<UserProfile>(entity =>
+            {
+                entity.ToTable("UserProfile");
+
+                entity.Property(e => e.Date)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Gender)
+                    .IsRequired()
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.Image)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.User)
                     .IsRequired()
