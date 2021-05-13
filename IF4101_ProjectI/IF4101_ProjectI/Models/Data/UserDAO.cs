@@ -58,6 +58,14 @@ namespace LabMVC_15042021.Models.Data
 			return 1;
 		}
 
+		public UserProfile GetUserProfile(Param userp)
+		{
+			
+			UserProfile user = _context.UserProfiles.First(p => p.User == "Yulissa1633");
+
+			return user;
+		}
+
 		public IEnumerable<UserProfile> GetUsersEF()
 		{
 			

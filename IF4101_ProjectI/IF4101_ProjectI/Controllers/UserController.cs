@@ -34,6 +34,12 @@ namespace IF4101_ProjectI.Controllers
             return Ok(userDAO.GetUsersEF());
         }
 
+        public UserProfile GetUserProfile([FromBody] Param userp)
+        {
+            userDAO = new UserDAO(_context);
+            return userDAO.GetUserProfile(userp);
+        }
+
         public IActionResult Insert([FromBody] UserProfile user)
         {
             if (user.Email == "" || user.Name == "" || user.User == "" || !(user.Email.Contains("@")))

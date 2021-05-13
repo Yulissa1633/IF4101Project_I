@@ -9,6 +9,13 @@ $('#buttonLog').click(function () {
     $('input[type="password"]').val('');
 });
 
+$('#buttonUpdateProfile').click(function () {
+    $('input[type="text"]').val('');
+    $('input[type="radio"]').val('');
+    $('input[type="file"]').val('');
+    $('input[type="date"]').val('');
+});
+
 function togglePopup() {
     document.getElementById("RegisterSection").classList.toggle("active");
 }
@@ -54,25 +61,29 @@ function Log() {
 
 function LoadUserEF() {
 
+    var param2 = {
+        user: param.user,
+        password: param.password
+    };
+
+    
     $.ajax({
-        url: "/User/GetEF", //MVC NORMAL
+        url: "/User/GetUserProfile", //MVC NORMAL
         type: "GET",
+        data: JSON.stringify(param2),
         contentType: "application/json;charset=utf-8",
         dataType: "json",
-        success: function (result) {
-            $.each(result, function (key, item) {
-                var a = result;
+        success: function (result) {               
                 var boton = document.getElementById("userProfile");
-                boton.innerHTML = item.user;
+            boton.innerHTML = result.user;
                 var boton = document.getElementById("nameProfile");
-                boton.innerHTML = item.name;
+            boton.innerHTML = result.name;
                 var boton = document.getElementById("emailProfile");
-                boton.innerHTML = item.email;
+            boton.innerHTML = result.email;
                 var boton = document.getElementById("dateProfile");
-                boton.innerHTML = item.date;
+            boton.innerHTML = result.date;
                 var boton = document.getElementById("genderProfile");
-                boton.innerHTML = item.gender;           
-            });
+            boton.innerHTML = result.gender;                 
         },
         error: function (errorMessage) {
             alert(errorMessage.responseText);
@@ -143,7 +154,7 @@ function CreateUser() {
         dataType: "json",
         success: function (result) {
             if (result == true) {
-                alert("holiiii");
+               
             }
             else {
                
@@ -174,7 +185,7 @@ function UpdateUser() {
         dataType: "json",
         success: function (result) {
             if (result == true) {
-                alert("holiiii");
+               
             }
             else {
 
