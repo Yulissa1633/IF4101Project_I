@@ -1,4 +1,4 @@
-﻿/***$('#buttonRegister').click(function () {
+﻿$('#buttonRegister').click(function () {
     $('input[type="text"]').val('');
     $('input[type="password"]').val('');
     $('input[type="email"]').val('');
@@ -7,15 +7,17 @@
 $('#buttonLog').click(function () {
     $('input[type="text"]').val('');
     $('input[type="password"]').val('');
-});**/
+});
 
 function togglePopup() {
     document.getElementById("RegisterSection").classList.toggle("active");
 }
 
+var param;
+
 function Log() {
 
-    var param = {
+    param = {
         user: $('#name2').val(),
         password: $('#password2').val()
     };
@@ -52,11 +54,6 @@ function Log() {
 
 function LoadUserEF() {
 
-    var param = {
-        user: $('#name2').val(),
-        password: $('#password2').val()
-    };
-
     $.ajax({
         url: "/User/GetEF", //MVC NORMAL
         type: "GET",
@@ -84,15 +81,15 @@ function LoadUserEF() {
 
 }
 
+var student;
+
 function Add() {
 
-    var student = {
+    student = {
         user: $('#user').val(),
         name: $('#name').val(),
         email: $('#email').val(),
         password: $('#password').val()
-
-
     };
 
     $.ajax({
@@ -107,6 +104,7 @@ function Add() {
                 document.getElementById('incorrect2').style.display = 'none';
                 document.getElementById('incorrect3').style.display = 'none';
                 document.getElementById('incorrect4').style.display = 'none';
+                CreateUser();
             }
             else {
                 document.getElementById('incorrect').style.display = 'block';
@@ -120,6 +118,70 @@ function Add() {
             document.getElementById('incorrect2').style.display = 'block';
             document.getElementById('incorrect3').style.display = 'block';
             document.getElementById('incorrect4').style.display = 'block';
+        }
+    });
+}
+
+var userp
+
+function CreateUser() {
+
+    userp = {
+        user: student.user,
+        name: student.name,
+        email: student.email,
+        date: null,
+        image: null,
+        gender: null
+    };
+
+    $.ajax({
+        url: "/User/Insert",
+        data: JSON.stringify(userp),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            if (result == true) {
+                alert("holiiii");
+            }
+            else {
+               
+            }
+        },
+        error: function (errorMessage) {
+            alert(errorMessage.responseText);
+        }
+    });
+}
+
+function UpdateUser() {
+
+    var userp2 = {
+        name: $('#nameUser').val(),
+        user: $('#userP').val(),
+        email: $('#emailUser').val(),
+        date: $('#dateUser').val(),
+        image: $('#image').val(),
+        gender: null
+    };
+
+    $.ajax({
+        url: "/User/Update",
+        data: JSON.stringify(userp2),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            if (result == true) {
+                alert("holiiii");
+            }
+            else {
+
+            }
+        },
+        error: function (errorMessage) {
+            alert(errorMessage.responseText);
         }
     });
 }

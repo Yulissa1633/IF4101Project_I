@@ -270,28 +270,28 @@
                     <tr>
 
                         <td id="tableCong3">
-                            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required="" autocomplete="off">
+                            <input id="nameUser" type="text" name="nameUser" class="form-control" placeholder="Nombre" required="" autocomplete="off">
                         </td>
 
                     </tr>
                     <tr>
 
                         <td id="tableCong3">
-                            <input type="text" name="usuario" class="form-control" placeholder="Usuario" required="" autocomplete="off">
+                            <input id="userP" type="text" name="userP" class="form-control" placeholder="Usuario" required="" autocomplete="off">
                         </td>
 
                     </tr>
                     <tr>
 
                         <td id="tableCong3">
-                            <input type="text" name="email" class="form-control" placeholder="Email" required="" autocomplete="off">
+                            <input id="emailUser" type="text" name="emailUser" class="form-control" placeholder="Email" required="" autocomplete="off">
                         </td>
 
                     </tr>
                     <tr>
 
                         <td id="tableCong3">
-                                    <input type="date" name="nacimiento" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                                    <input id="dateUser" type="date" name="dateUser" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
                         </td>
 
                     </tr>
@@ -305,14 +305,14 @@
                     <tr>
 
                         <td id="tableCong3">
-                            <input type="file" name="avatar">
+                            <input id="image" type="file" name="image">
                         </td>
 
                     </tr>
                     <tr>
 
                         <td id="tableCong4">
-                            <input id="gender" type="radio" value="H" name="sexo"> Masculino
+                            <input id="gender" type="radio" value="H" name="gender"> Masculino
                         </td>
                     </tr>
                     <tr>
@@ -325,7 +325,7 @@
                     <tr>
 
                         <td id="tableCong6">
-                            <button id="buttonUpdateProfile" type="submit" name="update" class="submit-btn form-control">Actualizar datos</button>
+                            <button id="buttonUpdateProfile" type="submit" name="update" onclick="return UpdateUser()" class="submit-btn form-control">Actualizar datos</button>
                         </td>
 
                     </tr>

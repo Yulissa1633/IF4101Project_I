@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using IF4101_ProjectI.Models.Data;
 using IF4101_ProjectI.Models.Entities;
 using LabMVC_15042021.Models.Domain;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.JSInterop;
@@ -34,6 +35,27 @@ namespace LabMVC_15042021.Models.Data
 		public UserDAO()
 		{
 
+		}
+
+		public int Insert(UserProfile user)
+		{ 
+			_context.UserProfiles.Add(user);
+			_context.SaveChanges();
+			return 1;
+		}
+
+		public int Update(UserProfile userp2)
+		{
+			var user = _context.UserProfiles.First(p => p.User == userp2.User);
+
+			user.User = userp2.User;
+			user.Name = userp2.Name;
+			user.Email = userp2.Email;
+			user.Date = userp2.Date;
+			user.Image = userp2.Image;
+			user.Gender = userp2.Gender;
+			_context.SaveChanges();
+			return 1;
 		}
 
 		public IEnumerable<UserProfile> GetUsersEF()

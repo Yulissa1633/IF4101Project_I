@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using IF4101_ProjectI.Models;
 using IF4101_ProjectI.Models.Data;
 using IF4101_ProjectI.Models.Entities;
 using LabMVC_15042021.Models.Data;
@@ -32,7 +34,36 @@ namespace IF4101_ProjectI.Controllers
             return Ok(userDAO.GetUsersEF());
         }
 
-        // GET: UserController/Details/5
+        public IActionResult Insert([FromBody] UserProfile user)
+        {
+            if (user.Email == "" || user.Name == "" || user.User == "" || !(user.Email.Contains("@")))
+            {
+                return Error();
+            }
+            else
+            {
+                userDAO = new UserDAO(_context);
+                int resultToReturn = userDAO.Insert(user);
+
+                return Ok(resultToReturn); //retornamos el 1 o el 0 ala vista
+            }                      
+        }
+
+        public IActionResult Update([FromBody] UserProfile userp2)
+        {
+            if (userp2.Email == "" || userp2.Name == "" || userp2.User == "" || !(userp2.Email.Contains("@")))
+            {
+                return Error();
+            }
+            else
+            {
+                userDAO = new UserDAO(_context);
+                int resultToReturn = userDAO.Update(userp2);
+
+                return Ok(resultToReturn); //retornamos el 1 o el 0 ala vista
+            }
+        }
+
         public ActionResult Details(int id)
         {
             return View();
@@ -99,6 +130,12 @@ namespace IF4101_ProjectI.Controllers
             {
                 return View();
             }
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
