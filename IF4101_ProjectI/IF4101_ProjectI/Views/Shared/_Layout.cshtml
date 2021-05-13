@@ -74,7 +74,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about"><i class="smoothScroll"></i>Perfil de usuario</a></li>
+                    <li><a id="profileButton" href="#about"><i class="smoothScroll"></i>Perfil de usuario</a></li>
                 </ul>
             </div>
 
@@ -221,7 +221,44 @@
 
     <!-- ABOUT -->
     <section id="about">
-        <a onclick="togglePopupEditProfile()">Editar perfil</a>
+        <img src="~/images/BannerUserProfile.png" width="1200" height="280">
+        <table id="userProfileTable">          
+            <tr>
+
+                <td id="tableCong5">
+                    <img src="~/images/UserEmpty.png" class="userpicture" width="100" height="100">
+                </td>
+                <td id="tableCong5">
+                    <h2 id="userProfile">Usuario</h2>
+                </td>
+                <td id="tableCong5">
+                    <h2 id="nameProfile">Nombre</h2>
+                </td>
+
+            </tr>          
+            <tr>
+
+                <td id="tableCong5">
+                    <h2 id="genderProfile">Género</h2>
+                </td>
+                <td id="tableCong5">
+                    <h2 id="dateProfile">Fecha de nacimiento</h2>
+                </td>
+                <td id="tableCong5">
+                    <h2 id="emailProfile">Email</h2>
+                </td>
+
+            </tr>           
+            <tr>
+                <td id="tableCong5">
+                    
+                </td>
+                <td id="tableCong5">                   
+                    <button id="buttonEditProfile" onclick="togglePopupEditProfile()">Editar perfil</button>
+                </td>
+
+            </tr>
+        </table>
 
         <!-- form start -->
         <div class="popup" id="EditProfileSection">
@@ -254,14 +291,7 @@
                     <tr>
 
                         <td id="tableCong3">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-calendar"></i>
-                                    </div>
-                                    <input type="text" name="nacimiento" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                                </div>
-                            </div>
+                                    <input type="date" name="nacimiento" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
                         </td>
 
                     </tr>
@@ -294,7 +324,7 @@
                     </tr>
                     <tr>
 
-                        <td id="tableCong">
+                        <td id="tableCong6">
                             <button id="buttonUpdateProfile" type="submit" name="update" class="submit-btn form-control">Actualizar datos</button>
                         </td>
 
@@ -337,9 +367,6 @@
                                                         <th>
                                                             Email
                                                         </th>
-                                                        <th>
-                                                            Action
-                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="tbody">
@@ -347,13 +374,13 @@
                                             </table>
                                         </div>
                                     </div>
-                                </form>            <!--END OF FORM ^^-->
+                                </form>
                             </fieldset>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>                        
+        </div>
     </section>
 
     <!-- Courses -->
@@ -741,7 +768,9 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/site.js"></script>
+    <script src="js/start.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/usersprofile.js"></script>
     <script type="text/javascript" src="wforms.js"></script>
 
 </body>

@@ -58,21 +58,15 @@ namespace IF4101_ProjectI.Models.Entities
             {
                 entity.ToTable("UserProfile");
 
-                entity.Property(e => e.Date)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.Date).HasMaxLength(50);
 
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.Gender)
-                    .IsRequired()
-                    .HasMaxLength(10);
+                entity.Property(e => e.Gender).HasMaxLength(10);
 
-                entity.Property(e => e.Image)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.Image).HasMaxLength(50);
 
                 entity.Property(e => e.Name)
                     .IsRequired()
