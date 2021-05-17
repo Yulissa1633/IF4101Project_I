@@ -25,6 +25,9 @@ namespace IF4101_ProjectI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+
             services.AddControllersWithViews();
 			services.AddDbContext<IF4101_B91472_B92299Context>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -45,16 +48,17 @@ namespace IF4101_ProjectI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
+                routes.MapRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

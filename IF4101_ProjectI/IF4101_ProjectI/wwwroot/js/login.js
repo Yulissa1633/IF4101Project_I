@@ -76,12 +76,16 @@ function LoadUserEF() {
         success: function (result) {               
                 var boton = document.getElementById("userProfile");
             boton.innerHTML = result.user;
+            var i = document.getElementById("userP").value = result.user;
                 var boton = document.getElementById("nameProfile");
             boton.innerHTML = result.name;
+            var i = document.getElementById("nameUser").value = result.name;
                 var boton = document.getElementById("emailProfile");
             boton.innerHTML = result.email;
+            var i = document.getElementById("emailUser").value = result.email;
                 var boton = document.getElementById("dateProfile");
             boton.innerHTML = result.date;
+            var i = document.getElementById("dateUser").value = result.date;
                 var boton = document.getElementById("genderProfile");
             boton.innerHTML = result.gender;                 
         },
@@ -174,7 +178,7 @@ function UpdateUser() {
         email: $('#emailUser').val(),
         date: $('#dateUser').val(),
         image: $('#image').val(),
-        gender: null
+        gender: $('input:radio[name=gender]:checked').val()
     };
 
     $.ajax({
@@ -185,7 +189,13 @@ function UpdateUser() {
         dataType: "json",
         success: function (result) {
             if (result == true) {
-               
+                var loadFile = function (event) {
+                    var output = document.getElementById('userAvatar');
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    output.onload = function () {
+                        URL.revokeObjectURL(output.src) // free memory
+                    }
+                };
             }
             else {
 

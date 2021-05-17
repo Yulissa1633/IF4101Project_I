@@ -8,6 +8,7 @@ using IF4101_ProjectI.Models.Data;
 using LabMVC_15042021.Models;
 using LabMVC_15042021.Models.Data;
 using LabMVC_15042021.Models.Domain;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -27,7 +28,7 @@ namespace LabMVC_15042021.Controllers
 		}		
 
 		public IActionResult Index()
-		{
+		{ 
 			return View();
 		}
 

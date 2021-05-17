@@ -364,6 +364,15 @@ h3 {
     background-color: white;
 }
 
+#courses {
+    height: 550px;
+    width: 350px;
+    padding: 0px;
+    padding-left: 70px;
+    padding-top: 40px;
+    background-color: white;
+}
+
 #tableOne {
     padding: 100px;
     border-spacing: 15px;
@@ -424,7 +433,7 @@ h3 {
     border: 1px solid #808b96;
 }
 
-#buttonLog, #buttonRegister, #buttonUpdateProfile, #buttonEditProfile {
+#buttonLog, #buttonRegister, #buttonUpdateProfile, #buttonEditProfile, #buttonSetCourse {
     text-decoration: none;
     background: #41ade7;
     border: 0px;

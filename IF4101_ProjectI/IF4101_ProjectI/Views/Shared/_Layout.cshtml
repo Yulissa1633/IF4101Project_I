@@ -89,43 +89,43 @@
                 <table>
                     <tr>
                         <td id="tableOne">
-                            <!--<form>-->
-                            <h2>Ingresar</h2>
-                            <table id="tableOne">
-                                <tr>
-                                    <td id="tableCong">
-                                        <input type="text" name="full name" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
-                                    </td>
-                                    <td id="tableCong">
-                                        <label id="incorrect5" class="disabled">*</label>
-                                    </td>
+                            <!--<form>-->                    
+                            <h2>Ingresar</h2>                          
+                                <table id="tableOne">
+                                    <tr>
+                                        <td id="tableCong">
+                                            <input type="text" name="full name" value="@Model" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
+                                        </td>
+                                        <td id="tableCong">
+                                            <label id="incorrect5" class="disabled">*</label>
+                                        </td>
 
-                                </tr>
+                                    </tr>
 
-                                <tr>
+                                    <tr>
 
-                                    <td id="tableCong">
-                                        <input type="password" name="password" id="password2" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
-                                    </td>
-                                    <td id="tableCong">
-                                        <label id="incorrect6" class="disabled">*</label>
-                                    </td>
+                                        <td id="tableCong">
+                                            <input type="password" name="password" id="password2" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
+                                        </td>
+                                        <td id="tableCong">
+                                            <label id="incorrect6" class="disabled">*</label>
+                                        </td>
 
-                                </tr>
+                                    </tr>
 
-                                <tr>
+                                    <tr>
 
-                                    <td id="tableCong">
-                                        <button class="submit-btn form-control" id="buttonLog" onclick="Log()">Ingresar</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td id="tableCong1">
-                                        <a onclick="togglePopup()">Registrarse</a>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!--</form>-->
+                                        <td id="tableCong">
+                                            <button class="submit-btn form-control" value="Save" id="buttonLog" onclick="Log()">Ingresar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="tableCong1">
+                                            <a onclick="togglePopup()">Registrarse</a>
+                                        </td>
+                                    </tr>
+                                </table>                        
+                                <!--</form>-->
                         </td>
                         <td>
                             <!-- Slideshow container -->
@@ -226,7 +226,7 @@
             <tr>
 
                 <td id="tableCong5">
-                    <img src="~/images/UserEmpty.png" class="userpicture" width="100" height="100">
+                    <img id="userAvatar" src="~/images/UserEmpty.png" alt="your image" class="userpicture" width="100" height="100">
                 </td>
                 <td id="tableCong5">
                     <h2 id="userProfile">Usuario</h2>
@@ -291,7 +291,7 @@
                     <tr>
 
                         <td id="tableCong3">
-                                    <input id="dateUser" type="date" name="dateUser" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                            <input id="dateUser" type="date" name="dateUser" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
                         </td>
 
                     </tr>
@@ -305,20 +305,27 @@
                     <tr>
 
                         <td id="tableCong3">
-                            <input id="image" type="file" name="image">
+                            <input id="image" type="file" name="image" accept="image/*" onchange="loadFile(event)">
                         </td>
 
                     </tr>
                     <tr>
 
                         <td id="tableCong4">
-                            <input id="gender" type="radio" value="H" name="gender"> Masculino
+                            <input id="gender" type="radio" value="Masculino" name="gender"> Masculino
                         </td>
                     </tr>
                     <tr>
 
                         <td id="tableCong4">
-                            <input id="gender" type="radio" value="H" name="sexo"> Femenino
+                            <input id="gender1" type="radio" value="Femenino" name="gender"> Femenino
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong4">
+                            <input id="gender2" type="radio" value="Otro" name="gender"> Otro
                         </td>
 
                     </tr>
@@ -390,169 +397,11 @@
 
                 <div class="col-md-12 col-sm-12">
                     <div class="section-title">
-                        <h2>Popular Courses <small>Upgrade your skills with newest courses</small></h2>
-                    </div>
-
-                    <div class="owl-carousel owl-theme owl-courses">
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="courses-thumb">
-                                    <div class="courses-top">
-                                        <div class="courses-image">
-                                            <img src="images/courses-image1.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="courses-date">
-                                            <span><i class="fa fa-calendar"></i> 12 / 7 / 2018</span>
-                                            <span><i class="fa fa-clock-o"></i> 7 Hours</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="courses-detail">
-                                        <h3><a href="#">Social Media Management</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-
-                                    <div class="courses-info">
-                                        <div class="courses-author">
-                                            <img src="images/author-image1.jpg" class="img-responsive" alt="">
-                                            <span>Mark Wilson</span>
-                                        </div>
-                                        <div class="courses-price">
-                                            <a href="#"><span>USD 25</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="courses-thumb">
-                                    <div class="courses-top">
-                                        <div class="courses-image">
-                                            <img src="images/courses-image2.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="courses-date">
-                                            <span><i class="fa fa-calendar"></i> 20 / 7 / 2018</span>
-                                            <span><i class="fa fa-clock-o"></i> 4.5 Hours</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="courses-detail">
-                                        <h3><a href="#">Graphic & Web Design</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-
-                                    <div class="courses-info">
-                                        <div class="courses-author">
-                                            <img src="images/author-image2.jpg" class="img-responsive" alt="">
-                                            <span>Jessica</span>
-                                        </div>
-                                        <div class="courses-price">
-                                            <a href="#"><span>USD 80</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="courses-thumb">
-                                    <div class="courses-top">
-                                        <div class="courses-image">
-                                            <img src="images/courses-image3.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="courses-date">
-                                            <span><i class="fa fa-calendar"></i> 15 / 8 / 2018</span>
-                                            <span><i class="fa fa-clock-o"></i> 6 Hours</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="courses-detail">
-                                        <h3><a href="#">Marketing Communication</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-
-                                    <div class="courses-info">
-                                        <div class="courses-author">
-                                            <img src="images/author-image3.jpg" class="img-responsive" alt="">
-                                            <span>Catherine</span>
-                                        </div>
-                                        <div class="courses-price free">
-                                            <a href="#"><span>Free</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="courses-thumb">
-                                    <div class="courses-top">
-                                        <div class="courses-image">
-                                            <img src="images/courses-image4.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="courses-date">
-                                            <span><i class="fa fa-calendar"></i> 10 / 8 / 2018</span>
-                                            <span><i class="fa fa-clock-o"></i> 8 Hours</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="courses-detail">
-                                        <h3><a href="#">Summer Kids</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-
-                                    <div class="courses-info">
-                                        <div class="courses-author">
-                                            <img src="images/author-image1.jpg" class="img-responsive" alt="">
-                                            <span>Mark Wilson</span>
-                                        </div>
-                                        <div class="courses-price">
-                                            <a href="#"><span>USD 45</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="courses-thumb">
-                                    <div class="courses-top">
-                                        <div class="courses-image">
-                                            <img src="images/courses-image5.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="courses-date">
-                                            <span><i class="fa fa-calendar"></i> 5 / 10 / 2018</span>
-                                            <span><i class="fa fa-clock-o"></i> 10 Hours</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="courses-detail">
-                                        <h3><a href="#">Business &amp; Management</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-
-                                    <div class="courses-info">
-                                        <div class="courses-author">
-                                            <img src="images/author-image2.jpg" class="img-responsive" alt="">
-                                            <span>Jessica</span>
-                                        </div>
-                                        <div class="courses-price free">
-                                            <a href="#"><span>Free</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
+                        <button id="buttonSetCourse" type="submit" name="course" onclick="return UpdateUser()" class="submit-btn form-control">Agregar un nuevo curso</button>
+                    </div>                   
                 </div>
             </div>
+        </div>
     </section>
 
 
