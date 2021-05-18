@@ -89,43 +89,43 @@
                 <table>
                     <tr>
                         <td id="tableOne">
-                            <!--<form>-->                    
-                            <h2>Ingresar</h2>                          
-                                <table id="tableOne">
-                                    <tr>
-                                        <td id="tableCong">
-                                            <input type="text" name="full name" value="@Model" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
-                                        </td>
-                                        <td id="tableCong">
-                                            <label id="incorrect5" class="disabled">*</label>
-                                        </td>
+                            <!--<form>-->
+                            <h2>Ingresar</h2>
+                            <table id="tableOne">
+                                <tr>
+                                    <td id="tableCong">
+                                        <input type="text" name="full name" value="@Model" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
+                                    </td>
+                                    <td id="tableCong">
+                                        <label id="incorrect5" class="disabled">*</label>
+                                    </td>
 
-                                    </tr>
+                                </tr>
 
-                                    <tr>
+                                <tr>
 
-                                        <td id="tableCong">
-                                            <input type="password" name="password" id="password2" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
-                                        </td>
-                                        <td id="tableCong">
-                                            <label id="incorrect6" class="disabled">*</label>
-                                        </td>
+                                    <td id="tableCong">
+                                        <input type="password" name="password" id="password2" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
+                                    </td>
+                                    <td id="tableCong">
+                                        <label id="incorrect6" class="disabled">*</label>
+                                    </td>
 
-                                    </tr>
+                                </tr>
 
-                                    <tr>
+                                <tr>
 
-                                        <td id="tableCong">
-                                            <button class="submit-btn form-control" value="Save" id="buttonLog" onclick="Log()">Ingresar</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td id="tableCong1">
-                                            <a onclick="togglePopup()">Registrarse</a>
-                                        </td>
-                                    </tr>
-                                </table>                        
-                                <!--</form>-->
+                                    <td id="tableCong">
+                                        <button class="submit-btn form-control" value="Save" id="buttonLog" onclick="Log()">Ingresar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="tableCong1">
+                                        <a onclick="togglePopup()">Registrarse</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--</form>-->
                         </td>
                         <td>
                             <!-- Slideshow container -->
@@ -222,7 +222,7 @@
     <!-- ABOUT -->
     <section id="about">
         <img src="~/images/BannerUserProfile.png" width="1200" height="280">
-        <table id="userProfileTable">          
+        <table id="userProfileTable">
             <tr>
 
                 <td id="tableCong5">
@@ -235,7 +235,7 @@
                     <h2 id="nameProfile">Nombre</h2>
                 </td>
 
-            </tr>          
+            </tr>
             <tr>
 
                 <td id="tableCong5">
@@ -248,12 +248,11 @@
                     <h2 id="emailProfile">Email</h2>
                 </td>
 
-            </tr>           
+            </tr>
             <tr>
                 <td id="tableCong5">
-                    
                 </td>
-                <td id="tableCong5">                   
+                <td id="tableCong5">
                     <button id="buttonEditProfile" onclick="togglePopupEditProfile()">Editar perfil</button>
                 </td>
 
@@ -394,12 +393,59 @@
     <section id="courses">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-12 col-sm-12">
                     <div class="section-title">
-                        <button id="buttonSetCourse" type="submit" name="course" onclick="return UpdateUser()" class="submit-btn form-control">Agregar un nuevo curso</button>
-                    </div>                   
+                        <button id="buttonSetCourse" type="submit" name="course" onclick="togglePopupAddCourse()" class="submit-btn form-control">Agregar un nuevo curso</button>
+                    </div>
                 </div>
+
+                <div id="coursesContainer">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- form start -->
+        <div class="popup" id="AddCourseSection">
+            <div class="overlay"></div>
+            <div class="content2">
+                <div class="close-btn" onclick="togglePopupAddCourse()">×</div>
+                <table>
+                    <h2>Agregar curso</h2>
+                    <tr>
+
+                        <td id="tableCong3">
+                            <input id="courseName" type="text" name="courseName" class="form-control" placeholder="Nombre" required="" autocomplete="off">
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong3">
+                            <select name="hours">
+                                <option value="1">8:00 - 10:00</option>
+                                <option value="2">8:00 - 11:50</option>
+                                <option value="3">13:00 - 15:50.</option>
+                                <option value="5">17:00p.m. - 21:50</option>                     
+                            </select>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="tableCong3">
+                            <input id="courseSemester" type="text" name="courseSemester" class="form-control" placeholder="Ciclo" required="" autocomplete="off">
+                        </td>
+
+                    </tr>                   
+                    <tr>
+
+                        <td id="tableCong6">
+                            <button id="buttonUpdateProfile" type="submit" name="update" onclick="return UpdateUser()" class="submit-btn form-control">Agregar</button>
+                        </td>
+
+                    </tr>
+                </table>
             </div>
         </div>
     </section>
@@ -620,6 +666,7 @@
     <script src="js/start.js"></script>
     <script src="js/login.js"></script>
     <script src="js/usersprofile.js"></script>
+    <script src="js/course.js"></script>
     <script type="text/javascript" src="wforms.js"></script>
 
 </body>

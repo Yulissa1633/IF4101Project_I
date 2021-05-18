@@ -4,6 +4,7 @@
         "scrollCollapse": true,
     });
     LoadDataEF();
+    GetCoursesEF();
     document.getElementById('incorrect').style.display = 'none';
     document.getElementById('incorrect2').style.display = 'none';
     document.getElementById('incorrect3').style.display = 'none';
@@ -38,6 +39,57 @@ function LoadDataEF() {
         error: function (errorMessage) {
             alert(errorMessage.responseText);
         }
+    });
+
+}
+
+//MÉTODO QUE JALE CURSOS DE LA BASE DE DATOS
+function GetCoursesEF() {
+
+    var count;
+
+    $.ajax({
+        url: "/Student/GetEF", //MVC NORMAL
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            $.each(result, function (key, item) {
+                const cantidad = $('').val();
+
+                for (var i = 1; i <= cantidad; i++) {
+                    var nuevo = '';
+
+                    $('').append(nuevo);
+                }
+            });
+        },
+        error: function (errorMessage) {
+            alert(errorMessage.responseText);
+        }
+
+    });
+
+    $.ajax({
+        url: "/Student/GetEF", //MVC NORMAL
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            $.each(result, function (key, item) {
+                const cantidad = $('').val();
+
+                for (var i = 1; i <= cantidad; i++) {
+                    var nuevo = '';
+
+                    $('').append(nuevo);
+                }
+            });
+        },
+        error: function (errorMessage) {
+            alert(errorMessage.responseText);
+        }
+        
     });
 
 }

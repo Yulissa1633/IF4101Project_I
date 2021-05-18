@@ -17,6 +17,9 @@ namespace IF4101_ProjectI.Models.Entities
         {
         }
 
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<New> News { get; set; }
+        public virtual DbSet<Professor> Professors { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<UserProfile> UserProfiles { get; set; }
 
@@ -32,6 +35,55 @@ namespace IF4101_ProjectI.Models.Entities
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Modern_Spanish_CI_AS");
+
+            modelBuilder.Entity<Course>(entity =>
+            {
+                entity.ToTable("Course");
+
+                entity.Property(e => e.Id).HasMaxLength(20);
+
+                entity.Property(e => e.Description)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Schedule)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Semester)
+                    .IsRequired()
+                    .HasMaxLength(10);
+            });
+
+            modelBuilder.Entity<New>(entity =>
+            {
+                entity.ToTable("New");
+
+                entity.Property(e => e.Date).HasColumnType("date");
+
+                entity.Property(e => e.Description).IsRequired();
+
+                entity.Property(e => e.Image).HasMaxLength(50);
+
+                entity.Property(e => e.Title).IsRequired();
+            });
+
+            modelBuilder.Entity<Professor>(entity =>
+            {
+                entity.ToTable("Professor");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50);
+            });
 
             modelBuilder.Entity<Student>(entity =>
             {
