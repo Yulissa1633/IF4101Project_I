@@ -49,19 +49,18 @@ function GetCoursesEF() {
     var count;
 
     $.ajax({
-        url: "/Student/GetEF", //MVC NORMAL
+        url: "/Course/GetEF", //MVC NORMAL
         type: "GET",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         success: function (result) {
             $.each(result, function (key, item) {
-                const cantidad = $('').val();
+                var nuevo = '<p>' + '' + '</p><div id="addedCourse" class="my_scroll_div"><img id="wall" src="images/course-img.jpg" class="img-responsive" alt="">' +
+                    '<h4 id = "cId"> ' + item.id + '</h4><h4 id = "cName">' + item.name + '</h4><h4 id = "cName">Ciclo:  ' + item.semester + '</h4><span><i class="fa fa-clock-o"></i>' + ' ' + item.schedule + '</span>'
+                    + ' ------------ ' + '<span><i class="fa fa-calendar"></i>' + ' ' + item.schedule + '</span><p>' + item.description + '</p>' +
+                    '<button id = "buttonDeleteCourse" type = "submit" name = "delete" onclick = "DeleteCourse()" class="submit-btn form-control" >Eliminar</button></div> ';
 
-                for (var i = 1; i <= cantidad; i++) {
-                    var nuevo = '';
-
-                    $('').append(nuevo);
-                }
+                $('#coursesContainer').append(nuevo);
             });
         },
         error: function (errorMessage) {

@@ -399,11 +399,13 @@
                     </div>
                 </div>
 
-                <div id="coursesContainer">
+                <div id="coursePlace">
+                    <div id="coursesContainer">
 
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
 
         <!-- form start -->
         <div class="popup" id="AddCourseSection">
@@ -417,6 +419,12 @@
                         </td>
                     </tr>
                     <tr>
+                        <td id="tableCong3">
+                            <input id="courseId" type="text" name="courseId" class="form-control" placeholder="Identificador" required="" autocomplete="off">
+                        </td>
+
+                    </tr>
+                    <tr>
 
                         <td id="tableCong3">
                             <input id="courseName" type="text" name="courseName" class="form-control" placeholder="Nombre" required="" autocomplete="off">
@@ -425,17 +433,17 @@
                     </tr>
                     <tr>
                         <td id="tableCong3">
-                            <select name="hours">
+                            <select id="schedule1" name="hours">
                                 <option value="1">8:00 - 10:00</option>
                                 <option value="2">8:00 - 11:50</option>
                                 <option value="3">13:00 - 15:50</option>
                                 <option value="5">17:00 - 21:50</option>
                             </select>
-                        </td>                        
+                        </td>
                     </tr>
                     <tr>
                         <td id="tableCong3">
-                            <select name="hours">
+                            <select id="schedule2" name="hours">
                                 <option value="1">L - V</option>
                                 <option value="2">K - M</option>
                                 <option value="3">L - J</option>
@@ -456,8 +464,8 @@
 
                     </tr>
                     <tr>
-                        <td id="tableCong3">
-                            <button id="buttonUpdateProfile" type="submit" name="update" onclick="return UpdateUser()" class="submit-btn form-control">Agregar</button>
+                        <td id="tableCong7">
+                            <button id="buttonUpdateProfile" type="submit" name="update" onclick="return AddCourse()" class="submit-btn form-control">Agregar</button>
                         </td>
                     </tr>
                 </table>
