@@ -411,7 +411,11 @@
             <div class="content2">
                 <div class="close-btn" onclick="togglePopupAddCourse()">×</div>
                 <table>
-                    <h2>Agregar curso</h2>
+                    <tr>
+                        <td id="tableCong3">
+                            <h2>Agregar curso</h2>
+                        </td>
+                    </tr>
                     <tr>
 
                         <td id="tableCong3">
@@ -420,30 +424,41 @@
 
                     </tr>
                     <tr>
-
                         <td id="tableCong3">
                             <select name="hours">
                                 <option value="1">8:00 - 10:00</option>
                                 <option value="2">8:00 - 11:50</option>
-                                <option value="3">13:00 - 15:50.</option>
-                                <option value="5">17:00p.m. - 21:50</option>                     
+                                <option value="3">13:00 - 15:50</option>
+                                <option value="5">17:00 - 21:50</option>
                             </select>
-                        </td>
-
+                        </td>                        
                     </tr>
                     <tr>
-
+                        <td id="tableCong3">
+                            <select name="hours">
+                                <option value="1">L - V</option>
+                                <option value="2">K - M</option>
+                                <option value="3">L - J</option>
+                                <option value="5">M - V</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <td id="tableCong3">
                             <input id="courseSemester" type="text" name="courseSemester" class="form-control" placeholder="Ciclo" required="" autocomplete="off">
                         </td>
 
-                    </tr>                   
+                    </tr>
                     <tr>
-
-                        <td id="tableCong6">
-                            <button id="buttonUpdateProfile" type="submit" name="update" onclick="return UpdateUser()" class="submit-btn form-control">Agregar</button>
+                        <td id="tableCong3">
+                            <textarea id="courseDescription" type="text" name="courseDescription" rows="8" cols="30" placeholder="Descripción del curso"></textarea>
                         </td>
 
+                    </tr>
+                    <tr>
+                        <td id="tableCong3">
+                            <button id="buttonUpdateProfile" type="submit" name="update" onclick="return UpdateUser()" class="submit-btn form-control">Agregar</button>
+                        </td>
                     </tr>
                 </table>
             </div>
