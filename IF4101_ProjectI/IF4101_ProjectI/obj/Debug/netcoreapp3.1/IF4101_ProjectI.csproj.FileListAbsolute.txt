@@ -425,3 +425,7 @@ C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\P
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Index.cshtml.g.cs
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\yulic\OneDrive\Documentos\UCR\Lenguajes para aplicaciones comerciales\Proyecto\IF4101Project_I\IF4101_ProjectI\IF4101_ProjectI\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

@@ -62,6 +62,7 @@ function Log() {
 function LoadUserEF() {
 
     var param2 = {
+
         user: param.user,
         password: param.password
     };
@@ -120,6 +121,7 @@ function Add() {
                 document.getElementById('incorrect3').style.display = 'none';
                 document.getElementById('incorrect4').style.display = 'none';
                 CreateUser();
+                SendEmail();
             }
             else {
                 document.getElementById('incorrect').style.display = 'block';
@@ -133,6 +135,33 @@ function Add() {
             document.getElementById('incorrect2').style.display = 'block';
             document.getElementById('incorrect3').style.display = 'block';
             document.getElementById('incorrect4').style.display = 'block';
+        }
+    });
+}
+
+var mail;
+
+function SendEmail() {
+    mail = {
+        toEmail: $('#email').val(),
+        subject: "Registro página Informática Empresarial UCR",
+        body: "Holaaa",
+        attachments: null
+    };
+
+    $.ajax({
+        url: "/Mail/SendMail",
+        data: JSON.stringify(mail),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            if (result == true) {
+                alert("Sí");
+            }         
+        },
+        error: function (errorMessage) {
+            alert("No");
         }
     });
 }

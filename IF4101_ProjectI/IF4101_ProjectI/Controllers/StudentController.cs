@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IF4101_ProjectI.Models.Data;
 using IF4101_ProjectI.Models.Entities;
 using LabMVC_15042021.Models.Data;
 using Microsoft.AspNetCore.Http;
@@ -20,9 +21,22 @@ namespace IF4101_ProjectI.Controllers
         }
 
         // GET: StudentController
-        public ActionResult Index()
+        public IActionResult Index(String param)
         {
+            //llamar a la API para saber si el student existe
+            if (GetParamToAuthenticate(param) != false)
+            {
+                //TODO: para el proyecto esto debe ser basado en el role, no en el email
+                HttpContext.Session.SetString("user", param);
+                return RedirectToAction("Index", "Home");
+            }
             return View();
+        }
+
+        private bool GetParamToAuthenticate(String param)
+        {
+            studentDAO = new StudentDAO(_context);
+            return param == "Yulissa1633";
         }
 
         public ActionResult GetEF()

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -31,9 +33,9 @@
 </head>
 
 <div class="container">
-	<main role="main" class="pb-3">
-		@RenderBody()
-	</main>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 </div>
 
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -83,614 +85,616 @@
 
 
     <!-- HOME -->
-    <section id="home">
-        <div class="row">
-            <div id="loginSection">
-                <table>
-                    <tr>
-                        <td id="tableOne">
-                            <!--<form>-->
-                            <h2>Ingresar</h2>
-                            <table id="tableOne">
-                                <tr>
-                                    <td id="tableCong">
-                                        <input type="text" name="full name" value="@Model" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
-                                    </td>
-                                    <td id="tableCong">
-                                        <label id="incorrect5" class="disabled">*</label>
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <td id="tableCong">
-                                        <input type="password" name="password" id="password2" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
-                                    </td>
-                                    <td id="tableCong">
-                                        <label id="incorrect6" class="disabled">*</label>
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <td id="tableCong">
-                                        <button class="submit-btn form-control" value="Save" id="buttonLog" onclick="Log()">Ingresar</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td id="tableCong1">
-                                        <a onclick="togglePopup()">Registrarse</a>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!--</form>-->
-                        </td>
-                        <td>
-                            <!-- Slideshow container -->
-                            <div class="slideshow-container">
-
-                                <!-- Full-width images with number and caption text -->
-                                <div class="mySlides fade">
-                                    <img src="images/recinto2.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides fade">
-                                    <img src="images/recinto1.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides fade">
-                                    <img src="images/recinto3.jpg" style="width:100%">
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <!--<form>-->
-            <div class="popup" id="RegisterSection">
-                <div class="overlay"></div>
-                <div class="content">
-                    <div class="close-btn" onclick="togglePopup()">×</div>
+        <section id="home">
+            <div class="row">
+                <div id="loginSection">
                     <table>
                         <tr>
+                            <td id="tableOne">
+                                <!--<form>-->
+                                <h2>Ingresar</h2>
+                                <table id="tableOne">
+                                    <tr>
+                                        <td id="tableCong">
+                                            <input type="text" name="full name" value="@Model" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
+                                        </td>
+                                        <td id="tableCong">
+                                            <label id="incorrect5" class="disabled">*</label>
+                                        </td>
 
-                            <td id="tableCong2">
-                                <h2>Registrarse</h2>
+                                    </tr>
+
+                                    <tr>
+
+                                        <td id="tableCong">
+                                            <input type="password" name="password" id="password2" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
+                                        </td>
+                                        <td id="tableCong">
+                                            <label id="incorrect6" class="disabled">*</label>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        @if (@HttpContextAccessor.HttpContext.Session.GetString("") == null)
+                                        {
+                                            <td id="tableCong">
+                                                <button class="submit-btn form-control" value="Save" id="buttonLog" onclick="Log()">Ingresar</button>
+                                            </td>
+                                        }
+                                        </tr>
+                                    <tr>
+                                        <td id="tableCong1">
+                                            <a onclick="togglePopup()">Registrarse</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--</form>-->
+                            </td>
+                            <td>
+                                <!-- Slideshow container -->
+                                <div class="slideshow-container">
+
+                                    <!-- Full-width images with number and caption text -->
+                                    <div class="mySlides fade">
+                                        <img src="images/recinto2.jpg" style="width:100%">
+                                    </div>
+
+                                    <div class="mySlides fade">
+                                        <img src="images/recinto1.jpg" style="width:100%">
+                                    </div>
+
+                                    <div class="mySlides fade">
+                                        <img src="images/recinto3.jpg" style="width:100%">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--<form>-->
+                <div class="popup" id="RegisterSection">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="close-btn" onclick="togglePopup()">×</div>
+                        <table>
+                            <tr>
+
+                                <td id="tableCong2">
+                                    <h2>Registrarse</h2>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td id="tableCong">
+                                    <input type="text" name="user" id="user" class="form-control" placeholder="Usuario" required="" autocomplete="off">
+                                </td>
+                                <td id="tableCong">
+                                    <label id="incorrect" class="disabled">*</label>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td id="tableCong">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre completo" required="" autocomplete="off">
+                                </td>
+                                <td id="tableCong">
+                                    <label id="incorrect2" class="disabled">*</label>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td id="tableCong">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" required="" autocomplete="off">
+                                </td>
+                                <td id="tableCong">
+                                    <label id="incorrect3" class="disabled">*</label>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td id="tableCong">
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
+                                </td>
+                                <td id="tableCong">
+                                    <label id="incorrect4" class="disabled">*</label>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td id="tableCong">
+                                    <button class="submit-btn form-control" onclick="return Add()" id="buttonRegister">Registrar</button>
+                                </td>
+
+                            </tr>
+                            <!--</form>-->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <img src="~/images/BannerUserProfile.png" width="1200" height="280">
+            <table id="userProfileTable">
+                <tr>
+
+                    <td id="tableCong5">
+                        <img id="userAvatar" src="~/images/UserEmpty.png" alt="your image" class="userpicture" width="100" height="100">
+                    </td>
+                    <td id="tableCong5">
+                        <h2 id="userProfile">Usuario</h2>
+                    </td>
+                    <td id="tableCong5">
+                        <h2 id="nameProfile">Nombre</h2>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td id="tableCong5">
+                        <h2 id="genderProfile">Género</h2>
+                    </td>
+                    <td id="tableCong5">
+                        <h2 id="dateProfile">Fecha de nacimiento</h2>
+                    </td>
+                    <td id="tableCong5">
+                        <h2 id="emailProfile">Email</h2>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td id="tableCong5">
+                    </td>
+                    <td id="tableCong5">
+                        <button id="buttonEditProfile" onclick="togglePopupEditProfile()">Editar perfil</button>
+                    </td>
+
+                </tr>
+            </table>
+
+            <!-- form start -->
+            <div class="popup" id="EditProfileSection">
+                <div class="overlay"></div>
+                <div class="content2">
+                    <div class="close-btn" onclick="togglePopupEditProfile()">×</div>
+                    <table>
+                        <h2>Editar perfil</h2>
+                        <tr>
+
+                            <td id="tableCong3">
+                                <input id="nameUser" type="text" name="nameUser" class="form-control" placeholder="Nombre" required="" autocomplete="off">
                             </td>
 
                         </tr>
                         <tr>
-                            <td id="tableCong">
-                                <input type="text" name="user" id="user" class="form-control" placeholder="Usuario" required="" autocomplete="off">
-                            </td>
-                            <td id="tableCong">
-                                <label id="incorrect" class="disabled">*</label>
+
+                            <td id="tableCong3">
+                                <input id="userP" type="text" name="userP" class="form-control" placeholder="Usuario" required="" autocomplete="off">
                             </td>
 
                         </tr>
-
                         <tr>
 
-                            <td id="tableCong">
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Nombre completo" required="" autocomplete="off">
-                            </td>
-                            <td id="tableCong">
-                                <label id="incorrect2" class="disabled">*</label>
+                            <td id="tableCong3">
+                                <input id="emailUser" type="text" name="emailUser" class="form-control" placeholder="Email" required="" autocomplete="off">
                             </td>
 
                         </tr>
-
                         <tr>
 
-                            <td id="tableCong">
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" required="" autocomplete="off">
-                            </td>
-                            <td id="tableCong">
-                                <label id="incorrect3" class="disabled">*</label>
+                            <td id="tableCong3">
+                                <input id="dateUser" type="date" name="dateUser" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
                             </td>
 
                         </tr>
-
                         <tr>
 
-                            <td id="tableCong">
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
-                            </td>
-                            <td id="tableCong">
-                                <label id="incorrect4" class="disabled">*</label>
+                            <td id="tableCong4">
+                                <p>Cambiar avatar</p>
                             </td>
 
                         </tr>
-
                         <tr>
 
-                            <td id="tableCong">
-                                <button class="submit-btn form-control" onclick="return Add()" id="buttonRegister">Registrar</button>
+                            <td id="tableCong3">
+                                <input id="image" type="file" name="image" accept="image/*" onchange="loadFile(event)">
                             </td>
 
                         </tr>
-                        <!--</form>-->
+                        <tr>
+
+                            <td id="tableCong4">
+                                <input id="gender" type="radio" value="Masculino" name="gender"> Masculino
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td id="tableCong4">
+                                <input id="gender1" type="radio" value="Femenino" name="gender"> Femenino
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td id="tableCong4">
+                                <input id="gender2" type="radio" value="Otro" name="gender"> Otro
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td id="tableCong6">
+                                <button id="buttonUpdateProfile" type="submit" name="update" onclick="return UpdateUser()" class="submit-btn form-control">Actualizar datos</button>
+                            </td>
+
+                        </tr>
                     </table>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <img src="~/images/BannerUserProfile.png" width="1200" height="280">
-        <table id="userProfileTable">
-            <tr>
-
-                <td id="tableCong5">
-                    <img id="userAvatar" src="~/images/UserEmpty.png" alt="your image" class="userpicture" width="100" height="100">
-                </td>
-                <td id="tableCong5">
-                    <h2 id="userProfile">Usuario</h2>
-                </td>
-                <td id="tableCong5">
-                    <h2 id="nameProfile">Nombre</h2>
-                </td>
-
-            </tr>
-            <tr>
-
-                <td id="tableCong5">
-                    <h2 id="genderProfile">Género</h2>
-                </td>
-                <td id="tableCong5">
-                    <h2 id="dateProfile">Fecha de nacimiento</h2>
-                </td>
-                <td id="tableCong5">
-                    <h2 id="emailProfile">Email</h2>
-                </td>
-
-            </tr>
-            <tr>
-                <td id="tableCong5">
-                </td>
-                <td id="tableCong5">
-                    <button id="buttonEditProfile" onclick="togglePopupEditProfile()">Editar perfil</button>
-                </td>
-
-            </tr>
-        </table>
-
-        <!-- form start -->
-        <div class="popup" id="EditProfileSection">
-            <div class="overlay"></div>
-            <div class="content2">
-                <div class="close-btn" onclick="togglePopupEditProfile()">×</div>
-                <table>
-                    <h2>Editar perfil</h2>
-                    <tr>
-
-                        <td id="tableCong3">
-                            <input id="nameUser" type="text" name="nameUser" class="form-control" placeholder="Nombre" required="" autocomplete="off">
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong3">
-                            <input id="userP" type="text" name="userP" class="form-control" placeholder="Usuario" required="" autocomplete="off">
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong3">
-                            <input id="emailUser" type="text" name="emailUser" class="form-control" placeholder="Email" required="" autocomplete="off">
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong3">
-                            <input id="dateUser" type="date" name="dateUser" placeholder="Fecha de nacimiento" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong4">
-                            <p>Cambiar avatar</p>
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong3">
-                            <input id="image" type="file" name="image" accept="image/*" onchange="loadFile(event)">
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong4">
-                            <input id="gender" type="radio" value="Masculino" name="gender"> Masculino
-                        </td>
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong4">
-                            <input id="gender1" type="radio" value="Femenino" name="gender"> Femenino
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong4">
-                            <input id="gender2" type="radio" value="Otro" name="gender"> Otro
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong6">
-                            <button id="buttonUpdateProfile" type="submit" name="update" onclick="return UpdateUser()" class="submit-btn form-control">Actualizar datos</button>
-                        </td>
-
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- TEAM -->
-    <section id="team">
-        <div class="container" id="">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="section-title">
-                        <h2>Usuarios registrados<small>Meet Professional Trainers</small></h2>
-                    </div>
-                </div>
-                <div class="container body-content">
-                    <div class="page-header">
-                        <label class="heading">History</label>
-                        <div class="form-group">
-                            <fieldset>
-                                <form action="" class="form-group" method="post">
-                                    <div class="table-responsive">
-                                        <div class="table-responsive">
-
-                                            <table id="escalation" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>
-                                                            Id
-                                                        </th>
-                                                        <th>
-                                                            User
-                                                        </th>
-                                                        <th>
-                                                            Name
-                                                        </th>
-                                                        <th>
-                                                            Email
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="tbody">
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </form>
-                            </fieldset>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses -->
-    <section id="courses">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="section-title">
-                        <button id="buttonSetCourse" type="submit" name="course" onclick="togglePopupAddCourse()" class="submit-btn form-control">Agregar un nuevo curso</button>
-                    </div>
-                </div>
-
-                <div id="coursePlace">
-                    <div id="coursesContainer">
-
-                    </div>
-                </div>
-                </div>
-            </div>
-
-        <!-- form start -->
-        <div class="popup" id="AddCourseSection">
-            <div class="overlay"></div>
-            <div class="content2">
-                <div class="close-btn" onclick="togglePopupAddCourse()">×</div>
-                <table>
-                    <tr>
-                        <td id="tableCong3">
-                            <h2>Agregar curso</h2>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="tableCong3">
-                            <input id="courseId" type="text" name="courseId" class="form-control" placeholder="Identificador" required="" autocomplete="off">
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td id="tableCong3">
-                            <input id="courseName" type="text" name="courseName" class="form-control" placeholder="Nombre" required="" autocomplete="off">
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td id="tableCong3">
-                            <select id="schedule1" name="hours">
-                                <option value="1">8:00 - 10:00</option>
-                                <option value="2">8:00 - 11:50</option>
-                                <option value="3">13:00 - 15:50</option>
-                                <option value="5">17:00 - 21:50</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="tableCong3">
-                            <select id="schedule2" name="hours">
-                                <option value="1">L - V</option>
-                                <option value="2">K - M</option>
-                                <option value="3">L - J</option>
-                                <option value="5">M - V</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="tableCong3">
-                            <input id="courseSemester" type="text" name="courseSemester" class="form-control" placeholder="Ciclo" required="" autocomplete="off">
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td id="tableCong3">
-                            <textarea id="courseDescription" type="text" name="courseDescription" rows="8" cols="30" placeholder="Descripción del curso"></textarea>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td id="tableCong7">
-                            <button id="buttonUpdateProfile" type="submit" name="update" onclick="return AddCourse()" class="submit-btn form-control">Agregar</button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- TESTIMONIAL -->
-    <section id="testimonial">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-12 col-sm-12">
-                    <div class="section-title">
-                        <h2>Student Reviews <small>from around the world</small></h2>
-                    </div>
-
-                    <div class="owl-carousel owl-theme owl-client">
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="tst-image">
-                                    <img src="images/tst-image1.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="tst-author">
-                                    <h4>Jackson</h4>
-                                    <span>Shopify Developer</span>
-                                </div>
-                                <p>You really do help young creative minds to get quality education and professional job search assistance. I’d recommend it to everyone!</p>
-                                <div class="tst-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="tst-image">
-                                    <img src="images/tst-image2.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="tst-author">
-                                    <h4>Camila</h4>
-                                    <span>Marketing Manager</span>
-                                </div>
-                                <p>Trying something new is exciting! Thanks for the amazing law course and the great teacher who was able to make it interesting.</p>
-                                <div class="tst-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="tst-image">
-                                    <img src="images/tst-image3.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="tst-author">
-                                    <h4>Barbie</h4>
-                                    <span>Art Director</span>
-                                </div>
-                                <p>Donec erat libero, blandit vitae arcu eu, lacinia placerat justo. Sed sollicitudin quis felis vitae hendrerit.</p>
-                                <div class="tst-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="item">
-                                <div class="tst-image">
-                                    <img src="images/tst-image4.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="tst-author">
-                                    <h4>Andrio</h4>
-                                    <span>Web Developer</span>
-                                </div>
-                                <p>Nam eget mi eu ante faucibus viverra nec sed magna. Vivamus viverra sapien ex, elementum varius ex sagittis vel.</p>
-                                <div class="tst-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-6 col-sm-12">
-                    <form id="contact-form" role="form" action="" method="post">
+        <!-- TEAM -->
+        <section id="team">
+            <div class="container" id="">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
                         <div class="section-title">
-                            <h2>Contact us <small>we love conversations. let us talk!</small></h2>
-                        </div>
-
-                        <div class="col-md-12 col-sm-12">
-                            <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
-
-                            <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
-
-                            <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
-                        </div>
-
-                        <div class="col-md-4 col-sm-12">
-                            <input type="submit" class="form-control" name="send message" value="Send Message">
-                        </div>
-
-                    </form>
-                </div>
-
-                <div class="col-md-6 col-sm-12">
-                    <div class="contact-image">
-                        <img src="images/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="footer-info">
-                        <div class="section-title">
-                            <h2>Headquarter</h2>
-                        </div>
-                        <address>
-                            <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>
-                        </address>
-
-                        <ul class="social-icon">
-                            <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
-
-                        <div class="copyright-text">
-                            <p>Copyright &copy; 2019 Company Name</p>
-
-                            <p>Design: TemplateMo</p>
+                            <h2>Usuarios registrados<small>Meet Professional Trainers</small></h2>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="footer-info">
-                        <div class="section-title">
-                            <h2>Contact Info</h2>
-                        </div>
-                        <address>
-                            <p>+65 2244 1100, +66 1800 1100</p>
-                            <p><a href="mailto:youremail.co">hello@youremail.co</a></p>
-                        </address>
-
-                        <div class="footer_menu">
-                            <h2>Quick Links</h2>
-                            <ul>
-                                <li><a href="#">Career</a></li>
-                                <li><a href="#">Investor</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Refund Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-12">
-                    <div class="footer-info newsletter-form">
-                        <div class="section-title">
-                            <h2>Newsletter Signup</h2>
-                        </div>
-                        <div>
+                    <div class="container body-content">
+                        <div class="page-header">
+                            <label class="heading">History</label>
                             <div class="form-group">
-                                <form action="#" method="get">
-                                    <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
-                                    <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
-                                </form>
-                                <span><sup>*</sup> Please note - we do not spam your email.</span>
+                                <fieldset>
+                                    <form action="" class="form-group" method="post">
+                                        <div class="table-responsive">
+                                            <div class="table-responsive">
+
+                                                <table id="escalation" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                Id
+                                                            </th>
+                                                            <th>
+                                                                User
+                                                            </th>
+                                                            <th>
+                                                                Name
+                                                            </th>
+                                                            <th>
+                                                                Email
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="tbody">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </fieldset>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Courses -->
+        <section id="courses">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="section-title">
+                            <button id="buttonSetCourse" type="submit" name="course" onclick="togglePopupAddCourse()" class="submit-btn form-control">Agregar un nuevo curso</button>
+                        </div>
+                    </div>
+
+                    <div id="coursePlace">
+                        <div id="coursesContainer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- form start -->
+            <div class="popup" id="AddCourseSection">
+                <div class="overlay"></div>
+                <div class="content2">
+                    <div class="close-btn" onclick="togglePopupAddCourse()">×</div>
+                    <table>
+                        <tr>
+                            <td id="tableCong3">
+                                <h2>Agregar curso</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="tableCong3">
+                                <input id="courseId" type="text" name="courseId" class="form-control" placeholder="Identificador" required="" autocomplete="off">
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td id="tableCong3">
+                                <input id="courseName" type="text" name="courseName" class="form-control" placeholder="Nombre" required="" autocomplete="off">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td id="tableCong3">
+                                <select id="schedule1" name="hours">
+                                    <option value="1">8:00 - 10:00</option>
+                                    <option value="2">8:00 - 11:50</option>
+                                    <option value="3">13:00 - 15:50</option>
+                                    <option value="5">17:00 - 21:50</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="tableCong3">
+                                <select id="schedule2" name="hours">
+                                    <option value="1">L - V</option>
+                                    <option value="2">K - M</option>
+                                    <option value="3">L - J</option>
+                                    <option value="5">M - V</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="tableCong3">
+                                <input id="courseSemester" type="text" name="courseSemester" class="form-control" placeholder="Ciclo" required="" autocomplete="off">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td id="tableCong3">
+                                <textarea id="courseDescription" type="text" name="courseDescription" rows="8" cols="30" placeholder="Descripción del curso"></textarea>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td id="tableCong7">
+                                <button id="buttonUpdateProfile" type="submit" name="update" onclick="return AddCourse()" class="submit-btn form-control">Agregar</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
 
 
-    <!-- SCRIPTS -->
-    <script src="js/jquery.js"></script>
-    <script src="js/datatables.min.js"></script>
-    <script src="css/datatables.min.css"></script>
-    <script src="css/jquery.dataables.min.css"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/start.js"></script>
-    <script src="js/login.js"></script>
-    <script src="js/usersprofile.js"></script>
-    <script src="js/course.js"></script>
-    <script type="text/javascript" src="wforms.js"></script>
+        <!-- TESTIMONIAL -->
+        <section id="testimonial">
+            <div class="container">
+                <div class="row">
 
-</body>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="section-title">
+                            <h2>Student Reviews <small>from around the world</small></h2>
+                        </div>
+
+                        <div class="owl-carousel owl-theme owl-client">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="item">
+                                    <div class="tst-image">
+                                        <img src="images/tst-image1.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="tst-author">
+                                        <h4>Jackson</h4>
+                                        <span>Shopify Developer</span>
+                                    </div>
+                                    <p>You really do help young creative minds to get quality education and professional job search assistance. I’d recommend it to everyone!</p>
+                                    <div class="tst-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4">
+                                <div class="item">
+                                    <div class="tst-image">
+                                        <img src="images/tst-image2.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="tst-author">
+                                        <h4>Camila</h4>
+                                        <span>Marketing Manager</span>
+                                    </div>
+                                    <p>Trying something new is exciting! Thanks for the amazing law course and the great teacher who was able to make it interesting.</p>
+                                    <div class="tst-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4">
+                                <div class="item">
+                                    <div class="tst-image">
+                                        <img src="images/tst-image3.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="tst-author">
+                                        <h4>Barbie</h4>
+                                        <span>Art Director</span>
+                                    </div>
+                                    <p>Donec erat libero, blandit vitae arcu eu, lacinia placerat justo. Sed sollicitudin quis felis vitae hendrerit.</p>
+                                    <div class="tst-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4">
+                                <div class="item">
+                                    <div class="tst-image">
+                                        <img src="images/tst-image4.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="tst-author">
+                                        <h4>Andrio</h4>
+                                        <span>Web Developer</span>
+                                    </div>
+                                    <p>Nam eget mi eu ante faucibus viverra nec sed magna. Vivamus viverra sapien ex, elementum varius ex sagittis vel.</p>
+                                    <div class="tst-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                        <form id="contact-form" role="form" action="" method="post">
+                            <div class="section-title">
+                                <h2>Contact us <small>we love conversations. let us talk!</small></h2>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+
+                                <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+
+                                <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
+                            </div>
+
+                            <div class="col-md-4 col-sm-12">
+                                <input type="submit" class="form-control" name="send message" value="Send Message">
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="contact-image">
+                            <img src="images/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="footer-info">
+                            <div class="section-title">
+                                <h2>Headquarter</h2>
+                            </div>
+                            <address>
+                                <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>
+                            </address>
+
+                            <ul class="social-icon">
+                                <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                <li><a href="#" class="fa fa-twitter"></a></li>
+                                <li><a href="#" class="fa fa-instagram"></a></li>
+                            </ul>
+
+                            <div class="copyright-text">
+                                <p>Copyright &copy; 2019 Company Name</p>
+
+                                <p>Design: TemplateMo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="footer-info">
+                            <div class="section-title">
+                                <h2>Contact Info</h2>
+                            </div>
+                            <address>
+                                <p>+65 2244 1100, +66 1800 1100</p>
+                                <p><a href="mailto:youremail.co">hello@youremail.co</a></p>
+                            </address>
+
+                            <div class="footer_menu">
+                                <h2>Quick Links</h2>
+                                <ul>
+                                    <li><a href="#">Career</a></li>
+                                    <li><a href="#">Investor</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Refund Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="footer-info newsletter-form">
+                            <div class="section-title">
+                                <h2>Newsletter Signup</h2>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <form action="#" method="get">
+                                        <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
+                                        <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
+                                    </form>
+                                    <span><sup>*</sup> Please note - we do not spam your email.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- SCRIPTS -->
+        <script src="js/jquery.js"></script>
+        <script src="js/datatables.min.js"></script>
+        <script src="css/datatables.min.css"></script>
+        <script src="css/jquery.dataables.min.css"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/smoothscroll.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/start.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/usersprofile.js"></script>
+        <script src="js/course.js"></script>
+        <script type="text/javascript" src="wforms.js"></script>
+
+    </body>
 </html>
