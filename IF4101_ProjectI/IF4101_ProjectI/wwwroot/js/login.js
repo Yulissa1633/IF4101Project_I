@@ -139,30 +139,30 @@ function Add() {
     });
 }
 
-var mail;
+var request
 
 function SendEmail() {
-    mail = {
-        toEmail: $('#email').val(),
+    request = {
+        toEmail: student.email,
         subject: "Registro página Informática Empresarial UCR",
         body: "Holaaa",
         attachments: null
     };
 
+    alert(request.toEmail);
+
     $.ajax({
         url: "/Mail/SendMail",
-        data: JSON.stringify(mail),
+        data: JSON.stringify(request),
         type: "POST",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         success: function (result) {
-            if (result == true) {
+          
                 alert("Sí");
-            }         
+                  
         },
-        error: function (errorMessage) {
-            alert("No");
-        }
+        
     });
 }
 

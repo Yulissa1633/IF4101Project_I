@@ -11,23 +11,23 @@ namespace IF4101_ProjectI.Controllers
     public class MailController : Controller
     {
         private readonly IMailService mailService;
-        public MailController(IMailService mailService)
+    public MailController(IMailService mailService)
+    {
+        this.mailService = mailService;
+    }
+    
+    public async Task<IActionResult> SendMail([FromBody] MailRequest request)
+    {
+        try
         {
-            this.mailService = mailService;
+            await mailService.SendEmailAsync(request);
+            return Ok();
         }
-        
-        public async Task<IActionResult> SendMail([FromForm] MailRequest request)
+        catch (Exception ex)
         {
-            try
-            {
-                await mailService.SendEmailAsync(request);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-
+            throw;
         }
+            
+    }
     }
 }
