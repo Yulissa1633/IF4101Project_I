@@ -13,11 +13,6 @@
     document.getElementById('incorrect6').style.display = 'none';
 });
 
-$.each($('a.disabled'), function (index, value) {
-    $(this).css('pointer-events', 'none');
-    $(this).css('cursor', 'not-allowed');
-});
-
 function LoadDataEF() {
     $.ajax({
         url: "/Student/GetEF", //MVC NORMAL

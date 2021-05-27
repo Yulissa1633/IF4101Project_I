@@ -39,10 +39,7 @@ namespace LabMVC_15042021.Controllers
 
 		public IActionResult Insert([FromBody] Student student)
 		{
-			//Llamada viene de la vista, este es el intermediario
-			//este método es el que llama al modelo (BD)
-
-			//regla de negocio, simulando que existe e@e.com
+		
 			if (student.Email == "" || student.Name == "" || student.Password == "" || student.User == "" || !(student.Email.Contains("@")))
 			{
 				return Error();
@@ -52,17 +49,33 @@ namespace LabMVC_15042021.Controllers
 				studentDAO = new StudentDAO(_configuration);
 				int resultToReturn = studentDAO.Insert(student);
 
-				return Ok(resultToReturn); //retornamos el 1 o el 0 ala vista
+				return Ok(resultToReturn); 
 			}
 		}
 
 		public IActionResult Get([FromBody] Param param)
-		{
-				
+		{				
 				studentDAO = new StudentDAO(_configuration);
 				bool resultToReturn = studentDAO.Login(param);
-				return Ok(resultToReturn);
 			
+			return Ok(resultToReturn);
+			
+		}
+
+		public IActionResult Redirect([FromBody] Param param)
+		{
+			studentDAO = new StudentDAO(_configuration);
+			bool resultToReturn = studentDAO.Login(param);
+			if (resultToReturn != false)
+			{
+				HttpContext.Session.SetString("user", param.User);
+			}
+			return Ok(resultToReturn);
+		}
+
+		public IActionResult Redirect2([FromBody] Param param)
+		{
+			return RedirectToAction("Index", "Student", param);
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

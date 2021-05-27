@@ -72,7 +72,7 @@
                     <li><a href="#team" class="smoothScroll disabled" id="Two">Usuarios registrados</a></li>
                     <li><a href="#courses" class="smoothScroll disabled" id="Three">Cursos</a></li>
                     <li><a href="#testimonial" class="smoothScroll disabled" id="Four">Profesores</a></li>
-                    <li><a href="#contact" class="smoothScroll disabled" id="Five">Noticias</a></li>
+                    <li><a href="#news" class="smoothScroll disabled" id="Five">Noticias</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -85,144 +85,144 @@
 
 
     <!-- HOME -->
-        <section id="home">
-            <div class="row">
-                <div id="loginSection">
+    <section id="home">
+        <div class="row">
+            <div id="loginSection">
+                <table>
+                    <tr>
+                        <td id="tableOne">
+                            <!--<form>-->
+                            <h2>Ingresar</h2>
+                            <table id="tableOne">
+                                <tr>
+                                    <td id="tableCong">
+                                        <input type="text" name="full name" value="@Model" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
+                                    </td>
+                                    <td id="tableCong">
+                                        <label id="incorrect5" class="disabled">*</label>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td id="tableCong">
+                                        <input type="password" name="password" id="password2" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
+                                    </td>
+                                    <td id="tableCong">
+                                        <label id="incorrect6" class="disabled">*</label>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td id="tableCong">
+                                        <button class="submit-btn form-control" value="Save" id="buttonLog" onclick="Log()">Ingresar</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td id="tableCong1">
+                                        <a onclick="togglePopup()">Registrarse</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--</form>-->
+                        </td>
+                        <td>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <img src="images/recinto2.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="images/recinto1.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="images/recinto3.jpg" style="width:100%">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--<form>-->
+            <div class="popup" id="RegisterSection">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup()">×</div>
                     <table>
                         <tr>
-                            <td id="tableOne">
-                                <!--<form>-->
-                                <h2>Ingresar</h2>
-                                <table id="tableOne">
-                                    <tr>
-                                        <td id="tableCong">
-                                            <input type="text" name="full name" value="@Model" id="name2" class="form-control" placeholder="Usuario" required="" autocomplete="off">
-                                        </td>
-                                        <td id="tableCong">
-                                            <label id="incorrect5" class="disabled">*</label>
-                                        </td>
 
-                                    </tr>
-
-                                    <tr>
-
-                                        <td id="tableCong">
-                                            <input type="password" name="password" id="password2" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
-                                        </td>
-                                        <td id="tableCong">
-                                            <label id="incorrect6" class="disabled">*</label>
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        @if (@HttpContextAccessor.HttpContext.Session.GetString("") == null)
-                                        {
-                                            <td id="tableCong">
-                                                <button class="submit-btn form-control" value="Save" id="buttonLog" onclick="Log()">Ingresar</button>
-                                            </td>
-                                        }
-                                        </tr>
-                                    <tr>
-                                        <td id="tableCong1">
-                                            <a onclick="togglePopup()">Registrarse</a>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <!--</form>-->
+                            <td id="tableCong2">
+                                <h2>Registrarse</h2>
                             </td>
-                            <td>
-                                <!-- Slideshow container -->
-                                <div class="slideshow-container">
 
-                                    <!-- Full-width images with number and caption text -->
-                                    <div class="mySlides fade">
-                                        <img src="images/recinto2.jpg" style="width:100%">
-                                    </div>
-
-                                    <div class="mySlides fade">
-                                        <img src="images/recinto1.jpg" style="width:100%">
-                                    </div>
-
-                                    <div class="mySlides fade">
-                                        <img src="images/recinto3.jpg" style="width:100%">
-                                    </div>
-                                </div>
-                            </td>
                         </tr>
+                        <tr>
+                            <td id="tableCong">
+                                <input type="text" name="user" id="user" class="form-control" placeholder="Usuario" required="" autocomplete="off">
+                            </td>
+                            <td id="tableCong">
+                                <label id="incorrect" class="disabled">*</label>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td id="tableCong">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Nombre completo" required="" autocomplete="off">
+                            </td>
+                            <td id="tableCong">
+                                <label id="incorrect2" class="disabled">*</label>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td id="tableCong">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" required="" autocomplete="off">
+                            </td>
+                            <td id="tableCong">
+                                <label id="incorrect3" class="disabled">*</label>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td id="tableCong">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
+                            </td>
+                            <td id="tableCong">
+                                <label id="incorrect4" class="disabled">*</label>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td id="tableCong">
+                                <button class="submit-btn form-control" onclick="return Add()" id="buttonRegister">Registrar</button>
+                            </td>
+
+                        </tr>
+                        <!--</form>-->
                     </table>
                 </div>
-
-                <!--<form>-->
-                <div class="popup" id="RegisterSection">
-                    <div class="overlay"></div>
-                    <div class="content">
-                        <div class="close-btn" onclick="togglePopup()">×</div>
-                        <table>
-                            <tr>
-
-                                <td id="tableCong2">
-                                    <h2>Registrarse</h2>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td id="tableCong">
-                                    <input type="text" name="user" id="user" class="form-control" placeholder="Usuario" required="" autocomplete="off">
-                                </td>
-                                <td id="tableCong">
-                                    <label id="incorrect" class="disabled">*</label>
-                                </td>
-
-                            </tr>
-
-                            <tr>
-
-                                <td id="tableCong">
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre completo" required="" autocomplete="off">
-                                </td>
-                                <td id="tableCong">
-                                    <label id="incorrect2" class="disabled">*</label>
-                                </td>
-
-                            </tr>
-
-                            <tr>
-
-                                <td id="tableCong">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" required="" autocomplete="off">
-                                </td>
-                                <td id="tableCong">
-                                    <label id="incorrect3" class="disabled">*</label>
-                                </td>
-
-                            </tr>
-
-                            <tr>
-
-                                <td id="tableCong">
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required="" autocomplete="off">
-                                </td>
-                                <td id="tableCong">
-                                    <label id="incorrect4" class="disabled">*</label>
-                                </td>
-
-                            </tr>
-
-                            <tr>
-
-                                <td id="tableCong">
-                                    <button class="submit-btn form-control" onclick="return Add()" id="buttonRegister">Registrar</button>
-                                </td>
-
-                            </tr>
-                            <!--</form>-->
-                        </table>
-                    </div>
-                </div>
             </div>
-        </section>
-
+        </div>
+    </section>
+    @if (@HttpContextAccessor.HttpContext.Session.GetString("user") != null)
+    {
         <!-- ABOUT -->
         <section id="about">
             <img src="~/images/BannerUserProfile.png" width="1200" height="280">
@@ -570,131 +570,86 @@
                     </div>
                 </div>
         </section>
+    }
 
-
-        <!-- CONTACT -->
-        <section id="contact">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-6 col-sm-12">
-                        <form id="contact-form" role="form" action="" method="post">
-                            <div class="section-title">
-                                <h2>Contact us <small>we love conversations. let us talk!</small></h2>
-                            </div>
-
-                            <div class="col-md-12 col-sm-12">
-                                <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
-
-                                <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
-
-                                <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
-                            </div>
-
-                            <div class="col-md-4 col-sm-12">
-                                <input type="submit" class="form-control" name="send message" value="Send Message">
-                            </div>
-
-                        </form>
+    <!-- NEWS -->
+    <section id="news">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title">
+                        <h2>Noticias</h2>
+                        <button id="buttonSetNews" onclick="togglePopupAddNews()">Agregar una noticia</button>
                     </div>
+                </div>
 
-                    <div class="col-md-6 col-sm-12">
-                        <div class="contact-image">
-                            <img src="images/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
-                        </div>
-                    </div>
+                <div id="newsContainer">
 
                 </div>
+
             </div>
-        </section>
+        </div>
 
+        <div class="popup" id="AddNewsSection">
+            <div class="overlay"></div>
+            <div class="content3">
+                <div class="close-btn" onclick="togglePopupAddNews()">×</div>
+                <table>
+                    <tr>
+                        <td id="tableCong3">
+                            <h2>Agregar noticia</h2>
+                        </td>
+                    </tr>
 
-        <!-- FOOTER -->
-        <footer id="footer">
-            <div class="container">
-                <div class="row">
+                    <tr>
+                        <td id="tableCong3">
+                            <input id="newsTitle" type="text" name="newsTitle" class="form-control" placeholder="Título" required="" autocomplete="off">
+                        </td>
+                    </tr>
 
-                    <div class="col-md-4 col-sm-6">
-                        <div class="footer-info">
-                            <div class="section-title">
-                                <h2>Headquarter</h2>
-                            </div>
-                            <address>
-                                <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>
-                            </address>
+                    <tr>
+                        <td id="tableCong3">
+                            <input id="newsDate" type="datetime-local" name="newsDate" class="form-control">
+                        </td>
+                    </tr>
 
-                            <ul class="social-icon">
-                                <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                            </ul>
+                    <tr>
+                        <td id="tableCong3">
+                            <input id="authorName" type="text" name="authorName" class="form-control" placeholder="Autor" required="" autocomplete="off">
+                        </td>
+                    </tr>
 
-                            <div class="copyright-text">
-                                <p>Copyright &copy; 2019 Company Name</p>
+                    <tr>
+                        <td id="tableCong3">
+                            <textarea id="desciption" class="form-control" rows="2" placeholder="Descipción"></textarea>
+                        </td>
+                    </tr>
 
-                                <p>Design: TemplateMo</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="footer-info">
-                            <div class="section-title">
-                                <h2>Contact Info</h2>
-                            </div>
-                            <address>
-                                <p>+65 2244 1100, +66 1800 1100</p>
-                                <p><a href="mailto:youremail.co">hello@youremail.co</a></p>
-                            </address>
-
-                            <div class="footer_menu">
-                                <h2>Quick Links</h2>
-                                <ul>
-                                    <li><a href="#">Career</a></li>
-                                    <li><a href="#">Investor</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Refund Policy</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12">
-                        <div class="footer-info newsletter-form">
-                            <div class="section-title">
-                                <h2>Newsletter Signup</h2>
-                            </div>
-                            <div>
-                                <div class="form-group">
-                                    <form action="#" method="get">
-                                        <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
-                                        <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
-                                    </form>
-                                    <span><sup>*</sup> Please note - we do not spam your email.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                    <tr>
+                        <td id="tableCong3">
+                            <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Publicar </button>
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </footer>
+        </div>
+    </section>
 
+    <!-- SCRIPTS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/datatables.min.js"></script>
+    <script src="css/datatables.min.css"></script>
+    <script src="css/jquery.dataables.min.css"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/start.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/usersprofile.js"></script>
+    <script src="js/course.js"></script>
+    <script type="text/javascript" src="wforms.js"></script>
 
-        <!-- SCRIPTS -->
-        <script src="js/jquery.js"></script>
-        <script src="js/datatables.min.js"></script>
-        <script src="css/datatables.min.css"></script>
-        <script src="css/jquery.dataables.min.css"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/smoothscroll.js"></script>
-        <script src="js/custom.js"></script>
-        <script src="js/start.js"></script>
-        <script src="js/login.js"></script>
-        <script src="js/usersprofile.js"></script>
-        <script src="js/course.js"></script>
-        <script type="text/javascript" src="wforms.js"></script>
-
-    </body>
+</body>
 </html>
+   

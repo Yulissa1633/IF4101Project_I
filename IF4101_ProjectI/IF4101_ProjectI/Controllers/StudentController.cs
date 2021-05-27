@@ -20,23 +20,11 @@ namespace IF4101_ProjectI.Controllers
             _context = context;
         }
 
-        // GET: StudentController
-        public IActionResult Index(String param)
+        // GET: StudentController 
+        public IActionResult Index(Param param)
         {
-            //llamar a la API para saber si el student existe
-            if (GetParamToAuthenticate(param) != false)
-            {
-                //TODO: para el proyecto esto debe ser basado en el role, no en el email
-                HttpContext.Session.SetString("user", param);
-                return RedirectToAction("Index", "Home");
-            }
-            return View();
-        }
-
-        private bool GetParamToAuthenticate(String param)
-        {
-            studentDAO = new StudentDAO(_context);
-            return param == "Yulissa1633";
+        
+            return View(param);
         }
 
         public ActionResult GetEF()

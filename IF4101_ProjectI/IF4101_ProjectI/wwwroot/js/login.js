@@ -43,8 +43,8 @@ function Log() {
                 });
                 document.getElementById('incorrect5').style.display = 'none';
                 document.getElementById('incorrect6').style.display = 'none';
-
-                LoadUserEF();
+                Redirect();
+                LoadUserEF();                
                 
             }
             else {
@@ -53,9 +53,38 @@ function Log() {
             }
         },
         error: function (errorMessage) {
-            document.getElementById('incorrect5').style.display = 'block';
-            document.getElementById('incorrect6').style.display = 'block';
+            alert("errorLog");
         }
+    });
+}
+
+function Redirect() {
+    $.ajax({
+        url: "/Home/Redirect",
+        data: JSON.stringify(param),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            if (result == true) {  
+                Redirect2();
+                document.location.reload();
+            }
+           
+        },
+        error: function (errorMessage) {
+            alert("errorRec");
+        }
+    });
+}
+
+function Redirect2() {
+    $.ajax({
+        url: "/Home/Redirect2",
+        data: JSON.stringify(param),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
     });
 }
 
@@ -66,10 +95,9 @@ function LoadUserEF() {
         user: param.user,
         password: param.password
     };
-
     
     $.ajax({
-        url: "/User/GetUserProfile", //MVC NORMAL
+        url: "/User/GetUserProfile", 
         type: "GET",
         data: JSON.stringify(param2),
         contentType: "application/json;charset=utf-8",
@@ -157,12 +185,9 @@ function SendEmail() {
         type: "POST",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
-        success: function (result) {
-          
-                alert("Sí");
-                  
-        },
-        
+        success: function (result) {         
+                alert("Sí");                 
+        },        
     });
 }
 
