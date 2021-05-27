@@ -67,8 +67,7 @@ function Redirect() {
         dataType: "json",
         success: function (result) {
             if (result == true) {  
-                Redirect2();
-                document.location.reload();
+                Redirect2();               
             }
            
         },
@@ -80,8 +79,7 @@ function Redirect() {
 
 function Redirect2() {
     $.ajax({
-        url: "/Home/Redirect2",
-        data: JSON.stringify(param),
+        url: "/Home/Index",
         type: "POST",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
@@ -247,7 +245,7 @@ function UpdateUser() {
                     var output = document.getElementById('userAvatar');
                     output.src = URL.createObjectURL(event.target.files[0]);
                     output.onload = function () {
-                        URL.revokeObjectURL(output.src) // free memory
+                        URL.revokeObjectURL(output.src) 
                     }
                 };
             }

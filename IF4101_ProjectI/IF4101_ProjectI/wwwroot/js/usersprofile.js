@@ -6,5 +6,9 @@ function togglePopupAddNews() {
     document.getElementById("AddNewsSection").classList.toggle("active");
 }
 
+function togglePopupAddInquiries() {
+    document.getElementById("AddInquiriesSection").classList.toggle("active");
+}
+
 
 

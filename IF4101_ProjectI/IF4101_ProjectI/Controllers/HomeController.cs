@@ -70,12 +70,8 @@ namespace LabMVC_15042021.Controllers
 			{
 				HttpContext.Session.SetString("user", param.User);
 			}
+			Index();
 			return Ok(resultToReturn);
-		}
-
-		public IActionResult Redirect2([FromBody] Param param)
-		{
-			return RedirectToAction("Index", "Student", param);
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
