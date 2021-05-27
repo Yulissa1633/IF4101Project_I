@@ -65,9 +65,9 @@ namespace WebApiLab.Controllers
         }
 
         // POST: api/Home
-        [Route("[action]")]
+        [Route("api/PostNew")]
         [HttpPost]
-        public async Task<ActionResult<News>> PostStudent(News news)
+        public async Task<ActionResult<News>> PostNew(News news)
         {
             _context.News.Add(news);
             await _context.SaveChangesAsync();
@@ -76,7 +76,7 @@ namespace WebApiLab.Controllers
         }
 
         // DELETE: api/Home/5
-        [Route("[action]")]
+        [Route("api/DeleteStudent")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<News>> DeleteStudent(int id)
         {

@@ -91,7 +91,7 @@ namespace LabMVC_15042021.Models.Data
 
 		public IEnumerable<Student> GetStudentsEF()
 		{
-			var students = _context.Students;
+			var students = _context.Student;
 
 			return students.ToList();
 		}

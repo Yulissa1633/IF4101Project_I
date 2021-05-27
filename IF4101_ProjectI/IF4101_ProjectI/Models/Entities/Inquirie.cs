@@ -7,10 +7,12 @@ using System.Collections.Generic;
 
 namespace IF4101_ProjectI.Models.Entities
 {
-    public partial class Professor
+    public partial class Inquirie
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+        public string Inquirie1 { get; set; }
+        public string Author { get; set; }
+        public string Professor { get; set; }
+        public string Type { get; set; }
     }
 }

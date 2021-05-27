@@ -368,13 +368,13 @@
                                                             Id
                                                         </th>
                                                         <th>
-                                                            User
+                                                            Usuario
                                                         </th>
                                                         <th>
-                                                            Name
+                                                            Nombre completo
                                                         </th>
                                                         <th>
-                                                            Email
+                                                            Correo electrónico
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -521,7 +521,7 @@
 
                     <tr>
                         <td id="tableCong3">
-                            <input id="authorName" type="text" class="form-control" placeholder="Autor" required="" autocomplete="off">
+                            <input id="authorNameI" type="text" class="form-control" placeholder="Autor" required="" autocomplete="off">
                         </td>
                     </tr>
 
@@ -534,7 +534,7 @@
                     <tr>
                         <td id="tableCong3">
                             <label for="type">Tipo de consulta </label>
-                            <select name="type" id="type" class="form-control">
+                            <select name="type" id="typeI" class="form-control">
                                 <option value="Pública">Pública</option>
                                 <option value="Privada">Privada</option>
                             </select>
@@ -543,7 +543,7 @@
 
                     <tr>
                         <td id="tableCong3">
-                            <button class="btn btn-sm btn-primary pull-right" type="submit" onclick="AddInquirie()"><i class="fa fa-pencil fa-fw"></i> Publicar </button>
+                            <button id="bNinq" class="btn btn-sm btn-primary pull-right" type="submit" onclick="AddInq()"><i class="fa fa-pencil fa-fw"></i> Publicar </button>
                         </td>
                     </tr>
                 </table>
@@ -609,20 +609,20 @@
                     <tr>
 
                         <td id="tableCong3">
-                            <input id="image" type="file" name="image" accept="image/*" onchange="loadFile(event)">
+                            <input id="imageNews" type="file" name="image" accept="image/*" onchange="loadFile(event)">
                         </td>
 
                     </tr>
 
                     <tr>
                         <td id="tableCong3">
-                            <textarea id="desciption" class="form-control" rows="2" placeholder="Descipción"></textarea>
+                            <textarea id="desciption" class="form-control" rows="2" placeholder="Descripción"></textarea>
                         </td>
                     </tr>
 
                     <tr>
                         <td id="tableCong3">
-                            <button class="btn btn-sm btn-primary pull-right" type="submit" onclick="AddNew()"><i class="fa fa-pencil fa-fw"></i> Publicar </button>
+                            <button id="bNnews" class="btn btn-sm btn-primary pull-right" type="submit" onclick="AddNew()"><i class="fa fa-pencil fa-fw"></i> Publicar </button>
                         </td>
                     </tr>
                 </table>

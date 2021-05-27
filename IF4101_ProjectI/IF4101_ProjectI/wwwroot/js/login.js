@@ -16,6 +16,20 @@ $('#buttonUpdateProfile').click(function () {
     $('input[type="date"]').val('');
 });
 
+$('#bNinq').click(function () {
+    $('input[type="text"]').val('');
+    $('input[type="radio"]').val('');
+    $('input[type="file"]').val('');
+    $('input[type="date"]').val('');
+});
+
+$('#bNnews').click(function () {
+    $('input[type="text"]').val('');
+    $('input[type="radio"]').val('');
+    $('input[type="file"]').val('');
+    $('input[type="date"]').val('');
+});
+
 function togglePopup() {
     document.getElementById("RegisterSection").classList.toggle("active");
 }

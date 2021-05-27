@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace IF4101_ProjectI.Models.Entities
 {
@@ -17,29 +19,25 @@ namespace IF4101_ProjectI.Models.Entities
         {
         }
 
-        public virtual DbSet<Course> Courses { get; set; }
-        public virtual DbSet<New> News { get; set; }
-        public virtual DbSet<Professor> Professors { get; set; }
-        public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<UserProfile> UserProfiles { get; set; }
+        public virtual DbSet<Course> Course { get; set; }
+        public virtual DbSet<Inquirie> Inquirie { get; set; }
+        public virtual DbSet<Professor> Professor { get; set; }
+        public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<UserProfile> UserProfile { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=163.178.107.10;Initial Catalog=IF4101_B91472_B92299;User ID=laboratorios;Password=KmZpo.2796");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Modern_Spanish_CI_AS");
-
             modelBuilder.Entity<Course>(entity =>
             {
-                entity.ToTable("Course");
-
                 entity.Property(e => e.Id).HasMaxLength(20);
 
                 entity.Property(e => e.Description)
@@ -59,23 +57,27 @@ namespace IF4101_ProjectI.Models.Entities
                     .HasMaxLength(10);
             });
 
-            modelBuilder.Entity<New>(entity =>
+            modelBuilder.Entity<Inquirie>(entity =>
             {
-                entity.ToTable("New");
+                entity.Property(e => e.Author)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.Date).HasColumnType("date");
+                entity.Property(e => e.Inquirie1)
+                    .IsRequired()
+                    .HasColumnName("Inquirie");
 
-                entity.Property(e => e.Description).IsRequired();
+                entity.Property(e => e.Professor)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.Image).HasMaxLength(50);
-
-                entity.Property(e => e.Title).IsRequired();
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(20);
             });
 
             modelBuilder.Entity<Professor>(entity =>
             {
-                entity.ToTable("Professor");
-
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -87,8 +89,6 @@ namespace IF4101_ProjectI.Models.Entities
 
             modelBuilder.Entity<Student>(entity =>
             {
-                entity.ToTable("Student");
-
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -108,8 +108,6 @@ namespace IF4101_ProjectI.Models.Entities
 
             modelBuilder.Entity<UserProfile>(entity =>
             {
-                entity.ToTable("UserProfile");
-
                 entity.Property(e => e.Date).HasMaxLength(50);
 
                 entity.Property(e => e.Email)

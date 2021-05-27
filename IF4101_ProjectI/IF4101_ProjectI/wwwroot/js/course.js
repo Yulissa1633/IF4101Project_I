@@ -48,10 +48,10 @@ function DeleteCourse() {
         dataType: "json",
         success: function (result) {
           
-            alert("elimina");
+           
         },
         error: function (errorMessage) {
-            alert("no elimina");
+          
         }
     });
 

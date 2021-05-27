@@ -39,14 +39,14 @@ namespace LabMVC_15042021.Models.Data
 
 		public int Insert(UserProfile user)
 		{ 
-			_context.UserProfiles.Add(user);
+			_context.UserProfile.Add(user);
 			_context.SaveChanges();
 			return 1;
 		}
 
 		public int Update(UserProfile userp2)
 		{
-			var user = _context.UserProfiles.First(p => p.User == userp2.User);
+			var user = _context.UserProfile.First(p => p.User == userp2.User);
 
 			user.User = userp2.User;
 			user.Name = userp2.Name;
@@ -61,7 +61,7 @@ namespace LabMVC_15042021.Models.Data
 		public UserProfile GetUserProfile(Param userp)
 		{
 			
-			UserProfile user = _context.UserProfiles.First(p => p.User == "Yulissa1633");
+			UserProfile user = _context.UserProfile.First(p => p.User == "Yulissa1633");
 
 			return user;
 		}
@@ -69,7 +69,7 @@ namespace LabMVC_15042021.Models.Data
 		public IEnumerable<UserProfile> GetUsersEF()
 		{
 			
-			var user = _context.UserProfiles;
+			var user = _context.UserProfile;
 
 			return user.ToList();
 		}
